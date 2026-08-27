@@ -96,6 +96,38 @@ document.querySelectorAll("[data-theme-target]").forEach((item) => {
   item.addEventListener("click", () => applyTheme(item.dataset.themeTarget));
 });
 
+document.querySelectorAll("[data-evidence-target]").forEach((item) => {
+  const jumpToEvidence = () => {
+    const target = document.querySelector(item.dataset.evidenceTarget);
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  item.addEventListener("click", (event) => {
+    if (event.target.closest("a, button")) return;
+    jumpToEvidence();
+  });
+
+  item.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    jumpToEvidence();
+  });
+});
+
+document.querySelectorAll(".evidence-shot img").forEach((image) => {
+  if (image.closest("a")) return;
+
+  const link = document.createElement("a");
+  link.href = image.getAttribute("src");
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.className = "evidence-image-link";
+  link.setAttribute("aria-label", `${image.alt || "证据截图"}，打开原图`);
+
+  image.replaceWith(link);
+  link.appendChild(image);
+});
+
 window.addEventListener("load", () => {
   body.classList.add("page-ready");
 });
