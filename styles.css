@@ -1145,6 +1145,25 @@ dd {
   grid-column: 1 / -1;
 }
 
+.process-card {
+  width: min(100%, 920px);
+  min-height: 0;
+  justify-self: center;
+  padding: 18px;
+}
+
+.process-card h3 {
+  min-height: 0;
+  margin: 20px 0 8px;
+  font-size: 21px;
+}
+
+.process-card p {
+  max-width: 860px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .evidence-meta {
   display: inline-flex;
   min-height: 28px;
@@ -1280,10 +1299,28 @@ dd {
 }
 
 .evidence-shot-long img {
-  max-height: none;
-  object-fit: contain;
-  object-position: center top;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: left 30%;
   display: block;
+}
+
+.process-preview-link {
+  position: relative;
+}
+
+.process-preview-link::after {
+  content: "点击查看完整长图";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 7px 10px;
+  color: #ffffff;
+  background: rgba(17, 17, 17, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .evidence-shot figcaption {
