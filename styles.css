@@ -56,11 +56,13 @@ body[data-theme="tooling"] {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     linear-gradient(90deg, rgba(17, 17, 17, 0.035) 1px, transparent 1px),
@@ -96,6 +98,18 @@ a {
 
 strong {
   font-weight: 800;
+}
+
+p,
+li,
+a,
+span,
+strong,
+h1,
+h2,
+h3,
+dd {
+  overflow-wrap: anywhere;
 }
 
 .skip-link {
@@ -843,9 +857,11 @@ strong {
   .topbar {
     align-items: flex-start;
     padding: 14px 20px;
+    overflow: hidden;
   }
 
   .nav-links {
+    width: 100%;
     max-width: 100%;
     overflow-x: auto;
     padding-bottom: 2px;
@@ -903,6 +919,15 @@ strong {
   .hero {
     gap: 28px;
     padding-top: 40px;
+    min-width: 0;
+  }
+
+  .hero-copy,
+  .hero-lead,
+  .keyword-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .hero h1 {
@@ -917,6 +942,16 @@ strong {
 
   .hero-actions {
     flex-direction: column;
+  }
+
+  .keyword-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .keyword-row li {
+    min-width: 0;
+    text-align: center;
   }
 
   .button {
@@ -1003,7 +1038,6 @@ strong {
     max-width: 100%;
     font-size: 34px;
     line-height: 1.06;
-    word-break: break-all;
   }
 
   .section-heading h2 {
@@ -1011,7 +1045,7 @@ strong {
   }
 
   .nav-links a {
-    padding: 8px 10px;
+    padding: 8px 7px;
   }
 
   .keyword-row li {
