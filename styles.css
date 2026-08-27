@@ -1114,6 +1114,10 @@ dd {
   scroll-margin-top: 110px;
 }
 
+.evidence-card-wide {
+  grid-column: 1 / -1;
+}
+
 .evidence-meta {
   display: inline-flex;
   min-height: 28px;
@@ -1146,6 +1150,17 @@ dd {
   color: var(--accent);
   font-size: 14px;
   font-weight: 900;
+}
+
+.evidence-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.evidence-actions a {
+  margin-top: 0;
 }
 
 @media (max-width: 1120px) {
@@ -1185,6 +1200,13 @@ dd {
   max-height: 360px;
   object-fit: cover;
   object-position: top left;
+}
+
+.evidence-shot-long img {
+  max-height: none;
+  object-fit: contain;
+  object-position: center top;
+  display: block;
 }
 
 .evidence-shot figcaption {
