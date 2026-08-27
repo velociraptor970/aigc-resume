@@ -1125,6 +1125,7 @@ dd {
 .evidence-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
   gap: 14px;
   margin-top: 34px;
 }
@@ -1303,6 +1304,15 @@ dd {
   object-fit: cover;
   object-position: left 30%;
   display: block;
+}
+
+.shadow-process-inline {
+  margin-top: 14px;
+}
+
+.shadow-process-inline img {
+  max-height: 260px;
+  object-position: left 34%;
 }
 
 .process-preview-link {
