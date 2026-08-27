@@ -234,7 +234,7 @@ dd {
 
 .hero h1 {
   max-width: 760px;
-  font-size: 86px;
+  font-size: 76px;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -243,9 +243,18 @@ dd {
   display: block;
 }
 
+.hero-subtitle {
+  max-width: 720px;
+  margin: 20px 0 0;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
 .hero-lead {
   max-width: 720px;
-  margin: 28px 0 0;
+  margin: 18px 0 0;
   color: #34343e;
   font-size: 19px;
   line-height: 1.85;
@@ -840,7 +849,7 @@ dd {
   }
 
   .hero h1 {
-    font-size: 68px;
+    font-size: 60px;
   }
 
   .hero-stage {
@@ -931,6 +940,7 @@ dd {
   }
 
   .hero-copy,
+  .hero-subtitle,
   .hero-lead,
   .keyword-row {
     width: 100%;
@@ -939,8 +949,13 @@ dd {
   }
 
   .hero h1 {
-    font-size: 46px;
+    font-size: 40px;
     line-height: 1.04;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    line-height: 1.5;
   }
 
   .hero-lead {
@@ -1044,8 +1059,12 @@ dd {
 @media (max-width: 460px) {
   .hero h1 {
     max-width: 100%;
-    font-size: 34px;
+    font-size: 32px;
     line-height: 1.06;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
   }
 
   .section-heading h2 {
