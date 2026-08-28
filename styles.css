@@ -4384,6 +4384,13 @@ dd {
   height: 126px !important;
 }
 
+#evidence-psai .evidence-shot img {
+  height: 168px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #fff !important;
+}
+
 @media (max-width: 980px) {
   .experience-item {
     grid-template-columns: 1fr !important;
