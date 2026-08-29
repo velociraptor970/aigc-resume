@@ -137,6 +137,12 @@ const requiredAssets = [
   "evidence-texture-platform-merge-request.png",
   "evidence-texture-platform-v3-preview.png",
   "evidence-texture-platform-replace-workflow.png",
+  "demo-matting-soft-edge-poster.jpg",
+  "demo-matting-soft-edge.mp4",
+  "demo-shadow-blender-layer-poster.jpg",
+  "demo-shadow-blender-layer.mp4",
+  "demo-shadow-ps-layer-poster.jpg",
+  "demo-shadow-ps-layer.mp4",
 ];
 
 for (const fileName of requiredAssets) {

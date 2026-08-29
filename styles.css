@@ -4893,8 +4893,10 @@ dd {
 }
 
 #evidence-matting .evidence-focus-matting-demo video {
-  object-fit: cover !important;
+  height: 280px !important;
+  object-fit: contain !important;
   object-position: center center !important;
+  background: #0d0d12 !important;
 }
 
 #evidence-shadow .evidence-focus-shadow-map {
@@ -4913,6 +4915,14 @@ dd {
   height: 260px !important;
   object-fit: contain !important;
   padding: 8px !important;
+}
+
+#evidence-shadow .evidence-focus-shadow-blender-demo video,
+#evidence-shadow .evidence-focus-shadow-ps-demo video {
+  height: 260px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #0d0d12 !important;
 }
 
 #evidence-texture-platform .evidence-media-grid {
@@ -5008,6 +5018,8 @@ dd {
 
   #evidence-matting .evidence-shot img,
   #evidence-matting .evidence-shot video,
+  #evidence-shadow .evidence-focus-shadow-blender-demo video,
+  #evidence-shadow .evidence-focus-shadow-ps-demo video,
   #evidence-shadow .evidence-focus-shadow-feedback img,
   #evidence-shadow .evidence-focus-shadow-process img,
   .support-evidence-grid .evidence-shot img {
