@@ -136,6 +136,15 @@ dd {
   transform: translateY(0);
 }
 
+.skip-link:not(:focus):not(:focus-visible) {
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .topbar {
   position: sticky;
   top: 0;
@@ -4825,5 +4834,200 @@ dd {
   .project-list,
   .support-projects {
     grid-template-columns: 1fr !important;
+  }
+}
+
+/* Final evidence preview tuning: keep public screenshots readable at first glance. */
+.evidence-section .evidence-shot {
+  overflow: hidden !important;
+}
+
+.evidence-section .evidence-shot .evidence-image-link {
+  display: block !important;
+}
+
+.evidence-section .evidence-shot img,
+.evidence-section .evidence-shot video {
+  display: block !important;
+  width: 100% !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+}
+
+.evidence-section .evidence-shot img {
+  object-fit: cover !important;
+}
+
+.evidence-section .evidence-contain img {
+  object-fit: contain !important;
+  padding: 8px !important;
+}
+
+#evidence-matting .evidence-media-grid,
+#evidence-shadow .shadow-proof-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: start !important;
+}
+
+#evidence-matting .evidence-shot img,
+#evidence-matting .evidence-shot video {
+  height: 252px !important;
+}
+
+#evidence-matting .evidence-focus-matting-praise img,
+#evidence-matting .evidence-focus-matting-doc img,
+#evidence-matting .evidence-focus-matting-shadow img {
+  object-fit: contain !important;
+  padding: 8px !important;
+}
+
+#evidence-matting .evidence-focus-matting-consult {
+  grid-column: 1 / -1 !important;
+}
+
+#evidence-matting .evidence-focus-matting-consult img {
+  height: 200px !important;
+  object-fit: cover !important;
+  object-position: center 34% !important;
+  padding: 0 !important;
+}
+
+#evidence-matting .evidence-focus-matting-demo video {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+#evidence-shadow .evidence-focus-shadow-map {
+  grid-column: 1 / -1 !important;
+}
+
+#evidence-shadow .evidence-focus-shadow-map img {
+  height: 420px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  padding: 0 !important;
+}
+
+#evidence-shadow .evidence-focus-shadow-feedback img,
+#evidence-shadow .evidence-focus-shadow-process img {
+  height: 260px !important;
+  object-fit: contain !important;
+  padding: 8px !important;
+}
+
+#evidence-texture-platform .evidence-media-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+#evidence-texture-platform .evidence-media-grid .evidence-shot:first-child {
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+#evidence-texture-platform .evidence-focus-texture-merge img,
+#evidence-texture-platform .evidence-focus-texture-preview img {
+  height: 230px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  padding: 0 !important;
+}
+
+#evidence-texture-platform .evidence-focus-texture-replace {
+  grid-column: 1 / -1 !important;
+}
+
+#evidence-texture-platform .evidence-focus-texture-replace img {
+  height: 96px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 6px !important;
+}
+
+.support-evidence-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: start !important;
+}
+
+.support-evidence-grid .evidence-card {
+  align-self: start !important;
+  min-height: 0 !important;
+}
+
+.support-evidence-grid .evidence-media-grid {
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+
+.support-evidence-grid .evidence-shot img {
+  height: 218px !important;
+}
+
+#evidence-pipeline .evidence-focus-pipeline-feedback img {
+  height: 148px !important;
+  object-fit: cover !important;
+  object-position: center 44% !important;
+  padding: 0 !important;
+}
+
+#evidence-pipeline .evidence-focus-workflow-useful img,
+#evidence-lora .evidence-focus-lora-feedback img {
+  height: 180px !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  padding: 0 !important;
+}
+
+#evidence-psai .evidence-focus-psai-denoise img {
+  height: 220px !important;
+  object-fit: cover !important;
+  object-position: center 23% !important;
+  padding: 0 !important;
+}
+
+#evidence-psai .evidence-focus-psai-repaint img {
+  height: 220px !important;
+  object-fit: cover !important;
+  object-position: center 72% !important;
+  padding: 0 !important;
+}
+
+.evidence-focus-pipeline-doc img,
+.evidence-focus-lora-doc img {
+  height: 240px !important;
+  object-fit: cover !important;
+  object-position: 78% 50% !important;
+}
+
+@media (max-width: 900px) {
+  #evidence-matting .evidence-media-grid,
+  #evidence-shadow .shadow-proof-layout,
+  #evidence-texture-platform .evidence-media-grid,
+  .support-evidence-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #evidence-matting .evidence-shot img,
+  #evidence-matting .evidence-shot video,
+  #evidence-shadow .evidence-focus-shadow-feedback img,
+  #evidence-shadow .evidence-focus-shadow-process img,
+  .support-evidence-grid .evidence-shot img {
+    height: 220px !important;
+  }
+
+  #evidence-texture-platform .evidence-focus-texture-merge img,
+  #evidence-texture-platform .evidence-focus-texture-preview img {
+    height: 220px !important;
+  }
+
+  #evidence-texture-platform .evidence-focus-texture-replace {
+    grid-column: auto !important;
+  }
+
+  #evidence-texture-platform .evidence-focus-texture-replace img {
+    height: 120px !important;
+  }
+
+  #evidence-shadow .evidence-focus-shadow-map img {
+    height: 300px !important;
   }
 }
