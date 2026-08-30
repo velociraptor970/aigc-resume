@@ -27,9 +27,9 @@ const themeDetails = {
   },
   tooling: {
     title: "PS-AI 功能方向协作",
-    copy: "沉淀 PS-AI 插件中的局部重绘、高清去噪、提示词文案与 ComfyUI 接入经验，并在现公司协作中提供功能参考。",
-    keywords: "PS-AI、局部重绘、高清去噪、提示词文案、ComfyUI 工作流参考",
-    proof: "插件演示截图、功能反馈记录、局部重绘与去噪案例",
+    copy: "围绕项目场景、角色、图标需求验证局部重绘与实时绘画能力，沉淀提示词文案和 ComfyUI 接入经验，并将局部重绘经验迁移到现公司协作。",
+    keywords: "PS-AI、局部重绘、实时绘画、提示词文案、ComfyUI 工作流参考",
+    proof: "插件演示截图、功能反馈记录、局部重绘案例、去噪补充工作流",
   },
   "texture-platform": {
     title: "公司自研 3D 贴图软件工具链",
