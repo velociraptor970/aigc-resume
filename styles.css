@@ -22,6 +22,13 @@ html body .support-evidence-grid { display:grid !important; grid-template-column
 html body #evidence-texture-platform > .evidence-media-wide { display:block !important; width:100% !important; }
 html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot { display:flex !important; width:min(100%, 760px) !important; margin:0 auto !important; }
 html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img { width:100% !important; height:auto !important; max-height:none !important; object-fit:contain !important; }
+/* Supporting evidence uses the same readable two-column composition. */
+html body .support-evidence-grid > .evidence-card { display:grid !important; grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr) !important; column-gap:28px !important; align-items:start !important; }
+html body .support-evidence-grid > .evidence-card > .evidence-meta,
+html body .support-evidence-grid > .evidence-card > h3,
+html body .support-evidence-grid > .evidence-card > p,
+html body .support-evidence-grid > .evidence-card > .pipeline-data-strip { grid-column:1 !important; }
+html body .support-evidence-grid > .evidence-card > .evidence-media-grid { grid-column:2 !important; grid-row:1 / span 5 !important; margin-top:0 !important; }
 html body #evidence-matting > .evidence-media-grid { grid-template-columns:minmax(0, 1.6fr) minmax(150px, .7fr) minmax(150px, .7fr) !important; }
 html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child { grid-row:span 2 !important; }
 /* Use CSS columns for the main evidence cards so unequal card heights do
@@ -49,6 +56,8 @@ html body #evidence-texture-platform > .evidence-media-wide { grid-column:2 !imp
   html body .main-case-card > .evidence-media-grid,
   html body .main-case-card > .shadow-proof-layout,
   html body #evidence-texture-platform > .evidence-media-wide{grid-column:1 !important; grid-row:auto !important; margin-top:20px !important;}
+  html body .support-evidence-grid > .evidence-card{grid-template-columns:1fr !important;}
+  html body .support-evidence-grid > .evidence-card > .evidence-media-grid{grid-column:1 !important; grid-row:auto !important; margin-top:20px !important;}
 }
 @media (max-width:980px){ html body .main-case-grid, html body .support-evidence-grid{grid-template-columns:1fr !important;} html body #evidence-texture-platform{grid-column:auto !important;} }
 @media (max-width:760px){ html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child{grid-row:auto !important;} }
