@@ -3243,6 +3243,24 @@ dd {
   }
 }
 
+/* Case 03 is a single long proof image: show the complete source without
+   the fixed-height crop used by the shadow gallery. */
+@media (min-width: 821px) {
+  html body #evidence-texture-platform > .evidence-media-wide,
+  html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start !important;
+  }
+  html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+  }
+}
+
 /* Final hierarchy pass: each main case reads as one compact proof card. */
 .hero-stage {
   background:
