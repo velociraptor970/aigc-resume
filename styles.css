@@ -6696,7 +6696,8 @@ html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption { 
   }
 }
 
-/* Feedback screenshot: fill its frame and crop the redundant blank area. */
+/* Shadow screenshots: fill each card width and crop only redundant blank area. */
+html body #evidence-shadow .evidence-focus-shadow-process img,
 html body #evidence-shadow .evidence-focus-shadow-feedback img {
   width: 100% !important;
   height: 300px !important;
@@ -6705,6 +6706,7 @@ html body #evidence-shadow .evidence-focus-shadow-feedback img {
   object-position: top left !important;
 }
 @media (max-width: 820px) {
+  html body #evidence-shadow .evidence-focus-shadow-process img,
   html body #evidence-shadow .evidence-focus-shadow-feedback img {
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
