@@ -3955,6 +3955,47 @@ dd {
   }
 }
 
+/* ===== Evidence media readability pass =====
+   Keep the complete source image (no crop/stretch), but give the media
+   column enough width and height so long screenshots remain legible. */
+#evidence-matting > .evidence-media-grid {
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, .85fr) !important;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) !important;
+  align-items: stretch !important;
+}
+#evidence-matting > .evidence-media-grid > .evidence-shot:first-child {
+  grid-row: 1 / span 2 !important;
+  align-self: stretch !important;
+}
+#evidence-matting > .evidence-media-grid > .evidence-shot:first-child img {
+  max-height: 980px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+#evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(2),
+#evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(3) {
+  align-self: stretch !important;
+}
+#evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(2) video,
+#evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(3) video {
+  aspect-ratio: 4 / 5 !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+@media (max-width: 820px) {
+  #evidence-matting > .evidence-media-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+  #evidence-matting > .evidence-media-grid > .evidence-shot:first-child {
+    grid-row: auto !important;
+  }
+  #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(2) video,
+  #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(3) video {
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
 @media (max-width: 820px) {
   .experience-item {
     grid-template-columns: 1fr;
