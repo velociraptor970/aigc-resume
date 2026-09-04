@@ -22,8 +22,13 @@ html body .support-evidence-grid { display:grid !important; grid-template-column
 html body #evidence-texture-platform > .evidence-media-wide { display:block !important; width:100% !important; }
 html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot { display:flex !important; width:min(100%, 760px) !important; margin:0 auto !important; }
 html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img { width:100% !important; height:auto !important; max-height:none !important; object-fit:contain !important; }
+/* Use CSS columns for the main evidence cards so unequal card heights do
+   not create a giant blank area beside the longer shadow-baking case. */
+html body .main-case-grid { display:block !important; column-count:2 !important; column-gap:24px !important; }
+html body .main-case-grid > .main-case-card { display:inline-block !important; width:100% !important; margin:0 0 24px !important; vertical-align:top !important; break-inside:avoid !important; }
+html body #evidence-texture-platform { grid-column:auto !important; }
 .project-card:focus-visible, .capability-card:focus-visible, .entry-card:focus-visible, .support-projects a:focus-visible, .button:focus-visible, .evidence-card a:focus-visible { outline:3px solid var(--accent) !important; outline-offset:3px !important; }
-@media (max-width:980px){ html body .main-case-grid, html body .support-evidence-grid{grid-template-columns:1fr !important;} html body #evidence-texture-platform{grid-column:auto !important;} }
+@media (max-width:980px){ html body .main-case-grid{column-count:1 !important;} html body .support-evidence-grid{grid-template-columns:1fr !important;} html body #evidence-texture-platform{grid-column:auto !important;} }
 @media (max-width:760px){ html body .evidence-section{width:min(100% - 28px,720px) !important;} html body .main-case-card{padding:20px !important;} html body .main-case-card .evidence-points, html body #evidence-matting>.evidence-media-grid, html body #evidence-shadow>.shadow-proof-layout{grid-template-columns:1fr !important;} html body .main-case-card .evidence-shot video{aspect-ratio:16/9 !important;} html body .evidence-image-tall img, html body .shadow-proof-layout .evidence-shot-long img{max-height:none !important;} }
 
 :root {
