@@ -31,6 +31,13 @@ html body .support-evidence-grid > .evidence-card > .pipeline-data-strip { grid-
 html body .support-evidence-grid > .evidence-card > .evidence-media-grid { grid-column:2 !important; grid-row:1 / span 5 !important; margin-top:0 !important; }
 html body #evidence-matting > .evidence-media-grid { grid-template-columns:minmax(0, 1.6fr) minmax(150px, .7fr) minmax(150px, .7fr) !important; }
 html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child { grid-row:span 2 !important; }
+/* Matting media: tall feedback image on the left, two videos stacked on
+   the right. This matches the intended red-box composition without empty
+   grid cells. */
+html body #evidence-matting > .evidence-media-grid { grid-template-columns:minmax(0, 1.45fr) minmax(220px, .75fr) !important; grid-template-rows:auto auto !important; }
+html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child { grid-column:1 !important; grid-row:1 / span 2 !important; }
+html body #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(2) { grid-column:2 !important; grid-row:1 !important; }
+html body #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(3) { grid-column:2 !important; grid-row:2 !important; }
 /* Use CSS columns for the main evidence cards so unequal card heights do
    not create a giant blank area beside the longer shadow-baking case. */
 html body .main-case-grid { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:24px !important; align-items:start !important; }
