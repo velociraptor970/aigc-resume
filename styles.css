@@ -3955,6 +3955,45 @@ dd {
   }
 }
 
+/* Keep the shadow evidence gallery tidy: equal columns/rows, full media. */
+#evidence-shadow > .shadow-proof-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, minmax(300px, 1fr)) !important;
+  grid-auto-rows: unset !important;
+  align-items: stretch !important;
+}
+#evidence-shadow > .shadow-proof-layout > .evidence-shot {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+#evidence-shadow > .shadow-proof-layout > .evidence-shot img,
+#evidence-shadow > .shadow-proof-layout > .evidence-shot video {
+  width: 100% !important;
+  height: 300px !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  background: #111 !important;
+}
+#evidence-shadow > .shadow-proof-layout > .evidence-shot:not(.evidence-video-shot) img {
+  background: #fff !important;
+}
+#evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption {
+  flex: 1 0 auto !important;
+  min-height: 48px !important;
+}
+@media (max-width: 820px) {
+  #evidence-shadow > .shadow-proof-layout {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+  }
+  #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
+  #evidence-shadow > .shadow-proof-layout > .evidence-shot video {
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
 /* ===== Evidence media readability pass =====
    Keep the complete source image (no crop/stretch), but give the media
    column enough width and height so long screenshots remain legible. */
@@ -5415,6 +5454,33 @@ body:not(.no-js) .reveal.is-visible {
   .project-layout .project-detail {
     position: static !important;
   }
+}
+
+/* Final shadow gallery alignment override. */
+html body #evidence-shadow > .shadow-proof-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, minmax(300px, 1fr)) !important;
+  grid-auto-rows: unset !important;
+  align-items: stretch !important;
+}
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot video {
+  width: 100% !important;
+  height: 300px !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot:not(.evidence-video-shot) img { background: #fff !important; }
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption { flex: 1 0 auto !important; min-height: 48px !important; }
+@media (max-width: 820px) {
+  html body #evidence-shadow > .shadow-proof-layout { grid-template-columns: 1fr !important; grid-template-rows: none !important; }
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot video { height: auto !important; aspect-ratio: 16 / 9 !important; }
 }
 
 /* FINAL UI AUDIT OVERRIDES (last cascade) */
