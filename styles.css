@@ -3216,6 +3216,33 @@ dd {
   }
 }
 
+/* Keep narrative and media in independent columns. The media column may
+   change height without stretching the left text grid. */
+@media (min-width: 821px) {
+  html body .main-case-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr) !important;
+    column-gap: 28px !important;
+    align-items: start !important;
+  }
+  html body .main-case-card > .evidence-meta,
+  html body .main-case-card > h3,
+  html body .main-case-card > p,
+  html body .main-case-card > .case-data-row,
+  html body .main-case-card > .evidence-points,
+  html body .main-case-card > a:not(.evidence-image-link) {
+    grid-column: 1 !important;
+  }
+  html body .main-case-card > .evidence-media-grid,
+  html body .main-case-card > .shadow-proof-layout,
+  html body #evidence-texture-platform > .evidence-media-wide {
+    grid-column: 2 !important;
+    grid-row: 1 / span 6 !important;
+    align-self: start !important;
+    margin-top: 0 !important;
+  }
+}
+
 /* Final hierarchy pass: each main case reads as one compact proof card. */
 .hero-stage {
   background:
