@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
   </head>
-  <body data-theme="engine">
+  <body data-theme="engine" class="no-js">
+    <script>document.body.classList.remove('no-js');</script>
     <a class="skip-link" href="#main">跳到主要内容</a>
 
     <header class="topbar" aria-label="主导航">
@@ -389,27 +390,15 @@
               </div>
             </dl>
             <div class="evidence-media-grid">
-              <figure class="evidence-shot evidence-focus-matting-praise evidence-contain">
-                <img src="assets/evidence-matting-praise.png" alt="项目组反馈软边缘抠图好用的飞书截图，已脱敏">
-                <figcaption>项目组使用反馈（已脱敏）</figcaption>
+              <figure class="evidence-shot evidence-focus-matting-combined evidence-image-tall">
+                <img src="assets/evidence-matting-combined.jpg" alt="软边缘抠图项目反馈、带阴影版本、跨组咨询与 ComfyUI 批量运行工作流文档拼图，已脱敏">
+                <figcaption>项目反馈 / 带阴影版本 / 跨组咨询 / 批量运行文档（已脱敏拼图）</figcaption>
               </figure>
               <figure class="evidence-shot evidence-video-shot evidence-focus-matting-demo">
                 <video controls preload="metadata" playsinline poster="assets/demo-matting-soft-edge-poster.jpg">
                   <source src="assets/demo-matting-soft-edge.mp4" type="video/mp4">
                 </video>
-                <figcaption>演示视频：软抠图 / 半透明抠图</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-matting-doc evidence-contain">
-                <img src="assets/evidence-matting-batch-doc.png" alt="ComfyUI 本地批量运行抠图工作流文档截图，已脱敏">
-                <figcaption>本地批量运行说明（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-matting-shadow evidence-contain">
-                <img src="assets/evidence-matting-shadow-feedback.png" alt="项目组对带阴影抠图版本效果改善的飞书截图，已脱敏">
-                <figcaption>带阴影版本效果反馈（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-matting-consult evidence-contain">
-                <img src="assets/evidence-matting-consult.png" alt="中台其他组负责人咨询半透明抠图工作流的飞书截图，已脱敏">
-                <figcaption>跨组咨询记录（已脱敏）</figcaption>
+                <figcaption>演示视频：软抠图</figcaption>
               </figure>
             </div>
             <a href="#project-matting">回到对应项目</a>
@@ -448,7 +437,7 @@
             </dl>
             <div class="shadow-proof-layout">
               <figure class="evidence-shot evidence-shot-long evidence-focus-shadow-map" id="shadow-process">
-                <img src="assets/shadow-process-long.png" alt="Blender 加 AI 阴影烘焙流程长图，展示从需求到交付的流程拆解">
+                <img src="assets/shadow-process-long-v2.png" alt="Blender 加 AI 阴影烘焙流程长图，展示从需求到交付的流程拆解">
                 <figcaption>流程拆解长图（点击可看完整图）</figcaption>
               </figure>
               <figure class="evidence-shot evidence-video-shot evidence-focus-shadow-blender-demo">
@@ -458,16 +447,12 @@
                 <figcaption>演示视频：Blender 文件层与烘焙过程</figcaption>
               </figure>
               <figure class="evidence-shot evidence-video-shot evidence-focus-shadow-ps-demo">
-                <video controls preload="metadata" playsinline poster="assets/demo-shadow-ps-layer-poster.jpg">
+                <video controls preload="metadata" playsinline poster="assets/evidence-shadow-process-source.png">
                   <source src="assets/demo-shadow-ps-layer.mp4" type="video/mp4">
                 </video>
                 <figcaption>演示视频：PS 阴影层对齐与检查</figcaption>
               </figure>
-              <figure class="evidence-shot evidence-focus-shadow-feedback evidence-contain">
-                <img src="assets/evidence-shadow-feedback.png" alt="项目协作中对交付效率和质量的飞书反馈截图，已脱敏">
-                <figcaption>效率反馈（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-shadow-process evidence-contain">
+              <figure class="evidence-shot evidence-focus-shadow-process">
                 <img src="assets/evidence-shadow-process-source.png" alt="Blender 阴影烘焙和 Photoshop 自动匹配工具过程截图，已脱敏">
                 <figcaption>工具过程截图（已脱敏）</figcaption>
               </figure>
@@ -506,18 +491,10 @@
                 <dd>合并请求、V3 效果展示、替换旧流程沟通、平台页面截图。</dd>
               </div>
             </dl>
-            <div class="evidence-media-grid">
-              <figure class="evidence-shot evidence-focus-texture-merge evidence-contain">
-                <img src="assets/evidence-texture-platform-merge-request.png" alt="合并请求记录截图，展示 Flux2 Klein TrueV3 双图材质编辑工作流更新，已脱敏">
-                <figcaption>合并请求记录（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-texture-preview evidence-contain">
-                <img src="assets/evidence-texture-platform-v3-preview.png" alt="公司自研 3D 贴图软件白膜上贴图 Flux Klein v3 版本效果展示截图，已脱敏">
-                <figcaption>V3 效果展示（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-texture-replace evidence-contain">
-                <img src="assets/evidence-texture-platform-replace-workflow.png" alt="将局部重绘工作流替换旧版局部重绘的沟通截图，已脱敏">
-                <figcaption>新流程替换旧版（已脱敏）</figcaption>
+            <div class="evidence-media-grid evidence-media-wide">
+              <figure class="evidence-shot evidence-focus-texture-combined evidence-image-tall">
+                <img src="assets/evidence-psai-texture-mr.jpg" alt="PS 一键去噪集成反馈与自研 3D 贴图软件 Flux2 Klein TrueV3 合并请求拼图，已脱敏">
+                <figcaption>PS 插件集成 + 自研 3D 贴图软件 MR（已脱敏拼图）</figcaption>
               </figure>
             </div>
             <a href="#project-texture-platform">回到对应项目</a>
@@ -561,48 +538,10 @@
                 <span>常规交付：Blender 阴影烘焙</span>
               </div>
             </div>
-            <div class="evidence-media-grid">
-              <figure class="evidence-shot evidence-focus-pipeline-feedback evidence-contain">
-                <img src="assets/evidence-pipeline-feedback-v2.png" alt="项目组对 AIGC 管线方案的飞书反馈截图，已脱敏">
-                <figcaption>管线方案复用反馈（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-workflow-useful evidence-contain">
-                <img src="assets/evidence-workflow-useful-feedback.png" alt="项目组反馈工作流文件好用并提出可定制造型需求的飞书截图，已脱敏">
-                <figcaption>工作流交付反馈（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-pipeline-doc">
-                <img src="assets/evidence-pipeline-doc.png" alt="项目管线文档与工作流示例截图，已脱敏">
-                <figcaption>管线文档沉淀（已脱敏）</figcaption>
-              </figure>
-            </div>
-          </article>
-          <article class="evidence-card reveal" id="evidence-psai">
-            <span class="evidence-meta">PS-AI</span>
-            <h3>PS-AI 插件协作</h3>
-            <p>围绕项目场景、角色、图标需求验证局部重绘与实时绘画能力；高清去噪作为协助同事的补充工作流沉淀。</p>
-            <div class="evidence-media-grid">
-              <figure class="evidence-shot evidence-focus-psai-denoise evidence-contain">
-                <img src="assets/evidence-psai-denoise-feedback-v2.png" alt="项目协作中关于 AI 去噪能力接入 PS 插件的反馈截图，包含保持线条、颜色和亮度不变的提示词方向，已脱敏">
-                <figcaption>高清去噪接入反馈（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-psai-repaint evidence-contain">
-                <img src="assets/evidence-psai-repaint-feedback-v2.png" alt="项目协作中关于局部重绘、涂抹区域调试和提示词建议的反馈截图，已脱敏">
-                <figcaption>局部重绘与提示词建议反馈（已脱敏）</figcaption>
-              </figure>
-            </div>
-          </article>
-          <article class="evidence-card reveal" id="evidence-lora">
-            <span class="evidence-meta">LoRA / Style Fit</span>
-            <h3>LoRA 风格适配</h3>
-            <p>围绕项目画风需求做参考整理、训练文档、批次生成和反馈记录。</p>
-            <div class="evidence-media-grid">
-              <figure class="evidence-shot evidence-focus-lora-feedback evidence-contain">
-                <img src="assets/evidence-workflow-useful-feedback.png" alt="项目组反馈工作流好用并可继续定制的飞书截图，已脱敏">
-                <figcaption>工作流反馈（已脱敏）</figcaption>
-              </figure>
-              <figure class="evidence-shot evidence-focus-lora-doc">
-                <img src="assets/evidence-pipeline-doc.png" alt="项目管线说明文档检索与展示截图，已脱敏">
-                <figcaption>管线文档入口（已脱敏）</figcaption>
+            <div class="evidence-media-grid evidence-media-wide">
+              <figure class="evidence-shot evidence-focus-pipeline-lora evidence-image-tall">
+                <img src="assets/evidence-pipeline-lora-feedback.jpg" alt="LoRA 精准细化管线跨组复用反馈拼图，包含启发认可、工作流 json 交付与使用反馈，已脱敏">
+                <figcaption>LoRA 精准细化管线跨组复用反馈（已脱敏拼图）</figcaption>
               </figure>
             </div>
           </article>
