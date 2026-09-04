@@ -6700,7 +6700,7 @@ html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption { 
 html body #evidence-shadow .evidence-focus-shadow-process img,
 html body #evidence-shadow .evidence-focus-shadow-feedback img {
   width: 100% !important;
-  height: 220px !important;
+  height: 160px !important;
   max-height: none !important;
   object-fit: cover !important;
   object-position: top left !important;
@@ -6708,17 +6708,17 @@ html body #evidence-shadow .evidence-focus-shadow-feedback img {
 
 /* Make all four shadow evidence cards use the same compact frame. */
 html body #evidence-shadow > .shadow-proof-layout > .evidence-shot {
-  height: 280px !important;
-  min-height: 280px !important;
+  height: 220px !important;
+  min-height: 220px !important;
   align-self: start !important;
   overflow: hidden !important;
 }
 html body #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
 html body #evidence-shadow > .shadow-proof-layout > .evidence-shot video {
-  flex: 0 0 220px !important;
-  height: 220px !important;
-  min-height: 220px !important;
-  max-height: 220px !important;
+  flex: 0 0 160px !important;
+  height: 160px !important;
+  min-height: 160px !important;
+  max-height: 160px !important;
 }
 html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption {
   flex: 0 0 58px !important;
