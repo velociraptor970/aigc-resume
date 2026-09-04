@@ -6705,11 +6705,42 @@ html body #evidence-shadow .evidence-focus-shadow-feedback img {
   object-fit: cover !important;
   object-position: top left !important;
 }
+
+/* Make all four shadow evidence cards use the same compact frame. */
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot {
+  height: 360px !important;
+  min-height: 360px !important;
+  align-self: start !important;
+  overflow: hidden !important;
+}
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot video {
+  flex: 0 0 300px !important;
+  height: 300px !important;
+  min-height: 300px !important;
+  max-height: 300px !important;
+}
+html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption {
+  flex: 0 0 58px !important;
+  min-height: 58px !important;
+  box-sizing: border-box !important;
+}
 @media (max-width: 820px) {
   html body #evidence-shadow .evidence-focus-shadow-process img,
   html body #evidence-shadow .evidence-focus-shadow-feedback img {
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
     object-fit: cover !important;
+  }
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot video {
+    flex-basis: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
   }
 }
