@@ -3241,6 +3241,12 @@ dd {
     align-self: start !important;
     margin-top: 0 !important;
   }
+  html body .main-case-card > .evidence-meta { grid-row: 1 !important; }
+  html body .main-case-card > h3 { grid-row: 2 !important; }
+  html body .main-case-card > p { grid-row: 3 !important; }
+  html body .main-case-card > .case-data-row { grid-row: 4 !important; }
+  html body .main-case-card > .evidence-points { grid-row: 5 !important; }
+  html body .main-case-card > a:not(.evidence-image-link) { grid-row: 6 !important; }
 }
 
 /* Case 03 is a single long proof image: show the complete source without
