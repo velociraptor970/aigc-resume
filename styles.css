@@ -3222,7 +3222,7 @@ dd {
   html body .main-case-card {
     display: block !important;
     position: relative !important;
-    min-height: 760px !important;
+    min-height: 680px !important;
     padding-right: calc(48% + 24px) !important;
   }
   html body .main-case-card > .evidence-meta,
