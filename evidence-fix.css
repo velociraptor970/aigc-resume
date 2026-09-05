@@ -1,0 +1,57 @@
+/* Desktop evidence layout override. Loaded after styles.css. */
+@media (min-width: 821px) {
+  html body .main-case-grid > .main-case-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.94fr) minmax(420px, 1.06fr) !important;
+    column-gap: 28px !important;
+    align-items: start !important;
+    min-height: 0 !important;
+    padding: 28px !important;
+    overflow: visible !important;
+  }
+
+  html body .main-case-grid > .main-case-card > .evidence-meta,
+  html body .main-case-grid > .main-case-card > h3,
+  html body .main-case-grid > .main-case-card > p,
+  html body .main-case-grid > .main-case-card > .case-data-row,
+  html body .main-case-grid > .main-case-card > .evidence-points,
+  html body .main-case-grid > .main-case-card > a:not(.evidence-image-link) {
+    grid-column: 1 !important;
+    justify-self: start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html body .main-case-grid > .main-case-card > .evidence-meta {
+    display: inline-flex !important;
+    width: fit-content !important;
+    align-self: start !important;
+    margin-bottom: 4px !important;
+  }
+
+  html body .main-case-grid > .main-case-card > h3,
+  html body .main-case-grid > .main-case-card > p {
+    max-width: 620px !important;
+  }
+
+  html body .main-case-grid > .main-case-card > .case-data-row {
+    max-width: 560px !important;
+  }
+
+  html body .main-case-grid > .main-case-card > .evidence-media-grid,
+  html body .main-case-grid > .main-case-card > .shadow-proof-layout,
+  html body .main-case-grid > .main-case-card > .evidence-media-wide {
+    grid-column: 2 !important;
+    grid-row: 1 / span 6 !important;
+    position: static !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    min-height: 0 !important;
+    display: grid !important;
+    gap: 14px !important;
+  }
+
+  html body .main-case-grid > .main-case-card > .evidence-media-wide {
+    display: block !important;
+  }
+}
