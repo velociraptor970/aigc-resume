@@ -94,7 +94,7 @@
 
   html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child {
     grid-column: 1 !important;
-    grid-row: 1 !important;
+    grid-row: 1 / span 2 !important;
     align-self: start !important;
   }
 
