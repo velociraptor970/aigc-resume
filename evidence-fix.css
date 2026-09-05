@@ -2,11 +2,11 @@
 @media (min-width: 821px) {
   html body .main-case-grid > .main-case-card {
     display: grid !important;
-    grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr) !important;
-    column-gap: 32px !important;
+    grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr) !important;
+    column-gap: 24px !important;
     align-items: start !important;
     min-height: 0 !important;
-    padding: 28px !important;
+    padding: 24px !important;
     overflow: visible !important;
   }
 
@@ -26,39 +26,23 @@
     display: inline-flex !important;
     width: fit-content !important;
     align-self: start !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 4px !important;
   }
 
   html body .main-case-grid > .main-case-card > h3,
   html body .main-case-grid > .main-case-card > p {
-    max-width: 660px !important;
+    max-width: 720px !important;
   }
 
   html body .main-case-grid > .main-case-card > .case-data-row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 12px !important;
-    margin: 16px 0 12px !important;
-  }
-
-  html body .main-case-grid > .main-case-card > .case-data-row > span {
-    flex: 1 1 168px !important;
-    min-width: 150px !important;
-    min-height: 58px !important;
-    padding: 12px 14px !important;
-  }
-
-  html body .main-case-grid > .main-case-card > .evidence-points {
-    margin-top: 12px !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
+    max-width: 680px !important;
   }
 
   html body .main-case-grid > .main-case-card > .evidence-media-grid,
   html body .main-case-grid > .main-case-card > .shadow-proof-layout,
   html body .main-case-grid > .main-case-card > .evidence-media-wide {
     grid-column: 2 !important;
-    grid-row: 1 / span 8 !important;
+    grid-row: 1 / span 6 !important;
     position: static !important;
     width: 100% !important;
     margin-top: 0 !important;
@@ -86,7 +70,7 @@
   }
 
   html body #evidence-matting > .evidence-media-grid {
-    grid-template-columns: minmax(0, 1.48fr) minmax(300px, 0.92fr) !important;
+    grid-template-columns: minmax(0, 1.38fr) minmax(240px, 0.72fr) !important;
     grid-template-rows: auto auto !important;
     align-items: start !important;
     align-content: start !important;
