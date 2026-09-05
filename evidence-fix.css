@@ -2,11 +2,11 @@
 @media (min-width: 821px) {
   html body .main-case-grid > .main-case-card {
     display: grid !important;
-    grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr) !important;
-    column-gap: 24px !important;
+    grid-template-columns: minmax(0, 1.28fr) minmax(280px, 0.72fr) !important;
+    column-gap: 20px !important;
     align-items: start !important;
     min-height: 0 !important;
-    padding: 24px !important;
+    padding: 22px !important;
     overflow: visible !important;
   }
 
@@ -31,11 +31,11 @@
 
   html body .main-case-grid > .main-case-card > h3,
   html body .main-case-grid > .main-case-card > p {
-    max-width: 720px !important;
+    max-width: 760px !important;
   }
 
   html body .main-case-grid > .main-case-card > .case-data-row {
-    max-width: 680px !important;
+    max-width: 740px !important;
   }
 
   html body .main-case-grid > .main-case-card > .evidence-media-grid,
@@ -70,10 +70,11 @@
   }
 
   html body #evidence-matting > .evidence-media-grid {
-    grid-template-columns: minmax(0, 1.38fr) minmax(240px, 0.72fr) !important;
+    grid-template-columns: minmax(0, 1.32fr) minmax(220px, 0.68fr) !important;
     grid-template-rows: auto auto !important;
     align-items: start !important;
     align-content: start !important;
+    gap: 12px !important;
   }
 
   html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child {
