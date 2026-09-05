@@ -68,7 +68,6 @@
     max-height: none !important;
     object-fit: contain !important;
   }
-
   html body #evidence-matting > .evidence-media-grid {
     grid-template-columns: minmax(0, 1.32fr) minmax(220px, 0.68fr) !important;
     grid-template-rows: auto auto !important;
