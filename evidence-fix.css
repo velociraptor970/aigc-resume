@@ -71,4 +71,17 @@
   html body .main-case-grid > .main-case-card > .evidence-media-wide {
     display: block !important;
   }
+
+  html body #evidence-matting .evidence-image-tall {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start !important;
+  }
+
+  html body #evidence-matting .evidence-image-tall img {
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
 }
