@@ -68,6 +68,59 @@
     max-height: none !important;
     object-fit: contain !important;
   }
+
+  html body #evidence-matting > h3 {
+    font-size: clamp(52px, 4.2vw, 66px) !important;
+    line-height: 0.98 !important;
+    margin-bottom: 18px !important;
+  }
+
+  html body #evidence-matting > p {
+    font-size: 21px !important;
+    line-height: 1.65 !important;
+    max-width: 800px !important;
+    margin-bottom: 28px !important;
+  }
+
+  html body #evidence-matting > .case-data-row {
+    gap: 14px !important;
+    margin-top: 4px !important;
+    margin-bottom: 28px !important;
+  }
+
+  html body #evidence-matting > .case-data-row span {
+    min-height: 84px !important;
+    padding: 16px 18px !important;
+  }
+
+  html body #evidence-matting > .case-data-row strong {
+    font-size: 22px !important;
+  }
+
+  html body #evidence-matting > .evidence-points {
+    gap: 14px !important;
+    margin-top: 6px !important;
+  }
+
+  html body #evidence-matting > .evidence-points div {
+    min-height: 104px !important;
+    padding: 18px 20px !important;
+  }
+
+  html body #evidence-matting > .evidence-points dt {
+    font-size: 18px !important;
+  }
+
+  html body #evidence-matting > .evidence-points dd {
+    font-size: 17px !important;
+    line-height: 1.72 !important;
+  }
+
+  html body #evidence-matting > a:not(.evidence-image-link) {
+    margin-top: 18px !important;
+    font-size: 18px !important;
+  }
+
   html body #evidence-matting > .evidence-media-grid {
     grid-template-columns: minmax(0, 1.32fr) minmax(220px, 0.68fr) !important;
     grid-template-rows: auto auto !important;
