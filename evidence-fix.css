@@ -84,4 +84,29 @@
     max-height: none !important;
     object-fit: contain !important;
   }
+
+  html body #evidence-matting > .evidence-media-grid {
+    grid-template-columns: minmax(0, 1.48fr) minmax(300px, 0.92fr) !important;
+    grid-template-rows: auto auto !important;
+    align-items: start !important;
+    align-content: start !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(2) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(3) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-self: start !important;
+  }
 }
