@@ -66,6 +66,7 @@ html body #evidence-texture-platform > .evidence-media-wide { grid-column:2 !imp
   html body .support-evidence-grid > .evidence-card{grid-template-columns:1fr !important;}
   html body .support-evidence-grid > .evidence-card > .evidence-media-grid{grid-column:1 !important; grid-row:auto !important; margin-top:20px !important;}
 }
+
 @media (max-width:980px){ html body .main-case-grid, html body .support-evidence-grid{grid-template-columns:1fr !important;} html body #evidence-texture-platform{grid-column:auto !important;} }
 @media (max-width:760px){ html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child{grid-row:auto !important;} }
 @media (max-width:760px){ html body .evidence-section{width:min(100% - 28px,720px) !important;} html body .main-case-card{padding:20px !important;} html body .main-case-card .evidence-points, html body #evidence-matting>.evidence-media-grid, html body #evidence-shadow>.shadow-proof-layout{grid-template-columns:1fr !important;} html body .main-case-card .evidence-shot video{aspect-ratio:16/9 !important;} html body .evidence-image-tall img, html body .shadow-proof-layout .evidence-shot-long img{max-height:none !important;} }
@@ -5716,6 +5717,40 @@ html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption { 
 
   #evidence-texture-platform {
     grid-column: auto !important;
+  }
+}
+
+/* Final restoration: keep narrative text wide and position evidence media
+   independently on desktop. */
+@media (min-width: 821px) {
+  html body .main-case-card {
+    display: block !important;
+    position: relative !important;
+    min-height: 680px !important;
+    padding-right: calc(48% + 24px) !important;
+  }
+  html body .main-case-card > .evidence-meta,
+  html body .main-case-card > h3,
+  html body .main-case-card > p,
+  html body .main-case-card > .case-data-row,
+  html body .main-case-card > .evidence-points,
+  html body .main-case-card > a:not(.evidence-image-link) {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  html body .main-case-card > .evidence-media-grid,
+  html body .main-case-card > .shadow-proof-layout,
+  html body #evidence-texture-platform > .evidence-media-wide {
+    position: absolute !important;
+    top: 28px !important;
+    right: 28px !important;
+    width: calc(48% - 4px) !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    align-self: start !important;
+    margin-top: 0 !important;
+    min-height: 0 !important;
   }
 }
 
