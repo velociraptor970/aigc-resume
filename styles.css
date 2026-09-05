@@ -3257,6 +3257,29 @@ dd {
   }
 }
 
+/* Keep the two-column proof layout usable when the browser is zoomed in
+   (the 820px breakpoint otherwise collapses the left text into a sliver). */
+@media (min-width: 761px) {
+  html body .main-case-card {
+    display: block !important;
+    position: relative !important;
+    min-height: 760px !important;
+    padding-right: 50% !important;
+    box-sizing: border-box !important;
+  }
+  html body .main-case-card > h3,
+  html body .main-case-card > p,
+  html body .main-case-card > .case-data-row,
+  html body .main-case-card > .evidence-points {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+  html body .main-case-card .evidence-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
 /* Case 03 is a single long proof image: show the complete source without
    the fixed-height crop used by the shadow gallery. */
 @media (min-width: 821px) {
