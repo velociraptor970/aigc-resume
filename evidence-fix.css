@@ -135,4 +135,72 @@
     grid-row: 2 !important;
     align-self: start !important;
   }
+
+  /* Final pass: tighten 01/02/03 evidence layouts and the supporting evidence block. */
+  html body #evidence-matting > .evidence-media-grid {
+    gap: 12px !important;
+    align-items: start !important;
+    align-content: start !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot:first-child {
+    margin-top: -4px !important;
+  }
+
+  html body #evidence-shadow > .shadow-proof-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 12px !important;
+    align-items: start !important;
+    align-content: start !important;
+  }
+
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    align-self: start !important;
+  }
+
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot video {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 210px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption {
+    min-height: 0 !important;
+    padding-top: 8px !important;
+    flex: 0 0 auto !important;
+  }
+
+  html body #evidence-texture-platform > .evidence-media-wide {
+    justify-self: start !important;
+    margin-left: 20px !important;
+    margin-right: auto !important;
+    width: 300px !important;
+  }
+
+  html body .support-evidence-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    margin-top: 22px !important;
+  }
+
+  html body .support-evidence-grid > .evidence-card {
+    width: 100% !important;
+    padding: 20px !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr) !important;
+    column-gap: 24px !important;
+  }
+
+  html body .support-evidence-grid > .evidence-card > .evidence-media-grid {
+    grid-column: 2 !important;
+    grid-row: 1 / span 5 !important;
+    width: 100% !important;
+    align-self: start !important;
+    margin-top: 0 !important;
+  }
 }
