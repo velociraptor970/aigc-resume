@@ -83,23 +83,23 @@
 
   html body #evidence-texture-platform > .evidence-media-wide {
     grid-column: 2 !important;
-    grid-row: 1 / span 6 !important;
+    grid-row: 1 / span 5 !important;
     display: grid !important;
-    width: 100% !important;
+    width: min(100%, 320px) !important;
     margin-top: 0 !important;
     min-height: 0 !important;
     align-self: start !important;
+    justify-self: end !important;
   }
 
   html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot {
-    width: min(100%, 380px) !important;
-    justify-self: end !important;
+    width: 100% !important;
   }
 
   html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img {
     width: 100% !important;
     height: auto !important;
-    max-height: 560px !important;
+    max-height: 520px !important;
     object-fit: contain !important;
     object-position: top center !important;
   }
