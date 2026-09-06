@@ -91,8 +91,8 @@
     margin-top: 0 !important;
     min-height: 0 !important;
     align-self: start !important;
-    justify-self: center !important;
-    margin-left: auto !important;
+    justify-self: start !important;
+    margin-left: 10px !important;
     margin-right: auto !important;
   }
 
