@@ -85,12 +85,14 @@
     grid-column: 2 !important;
     grid-row: 1 / span 5 !important;
     display: grid !important;
-    width: min(100%, 470px) !important;
+    width: min(100%, 380px) !important;
     grid-template-columns: 1fr !important;
     margin-top: 0 !important;
     min-height: 0 !important;
     align-self: start !important;
-    justify-self: end !important;
+    justify-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot {
