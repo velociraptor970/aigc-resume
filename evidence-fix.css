@@ -86,6 +86,7 @@
     grid-row: 1 / span 5 !important;
     display: grid !important;
     width: min(100%, 470px) !important;
+    grid-template-columns: 1fr !important;
     margin-top: 0 !important;
     min-height: 0 !important;
     align-self: start !important;
@@ -93,7 +94,9 @@
   }
 
   html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot {
+    grid-column: 1 !important;
     width: 100% !important;
+    justify-self: stretch !important;
   }
 
   html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img {
