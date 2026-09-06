@@ -147,40 +147,13 @@
     margin-top: -4px !important;
   }
 
-  html body #evidence-shadow > .shadow-proof-layout {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-template-rows: repeat(2, auto) !important;
-    gap: 12px !important;
-    align-items: start !important;
-    align-content: start !important;
-  }
-
-  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot {
-    height: auto !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-    align-self: start !important;
-  }
-
-  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot img,
-  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot video {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: 210px !important;
-    aspect-ratio: 16 / 9 !important;
-  }
-
-  html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption {
-    min-height: 0 !important;
-    padding-top: 8px !important;
-    flex: 0 0 auto !important;
-  }
-
   html body #evidence-texture-platform > .evidence-media-wide {
     justify-self: start !important;
-    margin-left: 20px !important;
+    margin-left: 12px !important;
     margin-right: auto !important;
-    width: 300px !important;
+    width: min(100%, 460px) !important;
+    max-width: 460px !important;
+    margin-top: -10px !important;
   }
 
   html body .support-evidence-grid {
