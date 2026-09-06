@@ -85,7 +85,8 @@
     grid-column: 2 !important;
     grid-row: 1 / span 5 !important;
     display: grid !important;
-    width: min(100%, 380px) !important;
+    width: 320px !important;
+    max-width: 100% !important;
     grid-template-columns: 1fr !important;
     margin-top: 0 !important;
     min-height: 0 !important;
