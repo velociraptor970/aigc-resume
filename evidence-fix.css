@@ -85,7 +85,7 @@
     grid-column: 2 !important;
     grid-row: 1 / span 5 !important;
     display: grid !important;
-    width: min(100%, 320px) !important;
+    width: min(100%, 470px) !important;
     margin-top: 0 !important;
     min-height: 0 !important;
     align-self: start !important;
@@ -99,7 +99,7 @@
   html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img {
     width: 100% !important;
     height: auto !important;
-    max-height: 520px !important;
+    max-height: 680px !important;
     object-fit: contain !important;
     object-position: top center !important;
   }
