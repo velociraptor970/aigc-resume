@@ -1,4 +1,4 @@
-﻿/* Desktop evidence layout override. Loaded after styles.css. */
+/* Desktop evidence layout override. Loaded after styles.css. */
 @media (min-width: 821px) {
   html body .main-case-grid > .main-case-card {
     display: grid !important;
@@ -136,4 +136,3 @@
     align-self: start !important;
   }
 }
-
