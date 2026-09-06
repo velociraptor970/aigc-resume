@@ -81,25 +81,27 @@
     object-position: top center !important;
   }
 
-  html body #evidence-texture-platform {
-    grid-template-columns: minmax(0, 1fr) !important;
+  html body #evidence-texture-platform > .evidence-media-wide {
+    grid-column: 2 !important;
+    grid-row: 1 / span 6 !important;
+    display: grid !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    min-height: 0 !important;
+    align-self: start !important;
   }
 
-  html body #evidence-texture-platform > .evidence-meta,
-  html body #evidence-texture-platform > h3,
-  html body #evidence-texture-platform > p,
-  html body #evidence-texture-platform > .case-data-row,
-  html body #evidence-texture-platform > .evidence-points,
-  html body #evidence-texture-platform > a:not(.evidence-image-link),
-  html body #evidence-texture-platform > .evidence-media-wide {
-    grid-column: 1 !important;
-    grid-row: auto !important;
-    max-width: 100% !important;
+  html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot {
+    width: min(100%, 380px) !important;
+    justify-self: end !important;
   }
 
-  html body #evidence-texture-platform > .evidence-media-wide {
-    display: block !important;
-    margin-top: 20px !important;
+  html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 560px !important;
+    object-fit: contain !important;
+    object-position: top center !important;
   }
 
   html body #evidence-matting > .evidence-media-grid {
