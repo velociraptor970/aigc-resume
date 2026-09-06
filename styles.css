@@ -6831,3 +6831,16 @@ html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption {
     max-height: none !important;
   }
 }
+
+/* Visibility fallback: keep reveal content visible even if JS doesn't finish. */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.reveal.is-visible,
+.page-ready .hero-copy.reveal,
+.page-ready .hero-stage.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
