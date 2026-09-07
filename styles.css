@@ -6445,7 +6445,7 @@ html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption { 
    FIXES 2026-09-03 #6 — 证据图彻底重写：长图就是长图、不强行做方框
    实际文件尺寸（已用 GDI+ 读取）：
      - evidence-matting-combined.jpg     3442 x 4590  ← 竖版长图 3:4
-     - evidence-psai-texture-mr.jpg      3442 x 4590  ← 竖版长图 3:4
+     - evidence-psai-texture-mr.jpg      3200 x 4480  ← 裁剪后的竖版截图
      - evidence-pipeline-lora-feedback.png  942 x 1107  ← 辅助证据标准化截图
      - evidence-shadow-process-source.png   993 x 1008  ← 近正方形
      - shadow-process-long.png            1200 x 2465  ← 竖版流程长图
