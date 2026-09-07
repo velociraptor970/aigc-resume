@@ -20,7 +20,7 @@ html body .support-evidence-grid { display:grid !important; grid-template-column
 /* Case 03 has one portrait proof image; do not reserve an empty second
    column beside it. Center the evidence at a readable width instead. */
 html body #evidence-texture-platform > .evidence-media-wide { display:block !important; width:100% !important; }
-html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot { display:flex !important; width:min(100%, 760px) !important; margin:0 auto !important; }
+html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot { display:flex !important; width:min(100%, 760px) !important; margin:0 !important; }
 html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img { width:100% !important; height:auto !important; max-height:none !important; object-fit:contain !important; }
 /* Supporting evidence uses the same readable two-column composition. */
 html body .support-evidence-grid > .evidence-card { display:grid !important; grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr) !important; column-gap:28px !important; align-items:start !important; }
