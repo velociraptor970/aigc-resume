@@ -6537,9 +6537,9 @@ html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption { 
   width: 100% !important;
 }
 
-/* 让拼图在 evidence-media-wide 里占右侧宽栏（和 01 里拼图位置一致） */
+/* 让 03 的单张长图靠左，避免整块过度右移 */
 .main-case-card > .evidence-media-wide > .evidence-shot {
-  grid-column: 2 !important;
+  grid-column: 1 !important;
   grid-row: 1 / 6 !important;
   align-self: start !important;
 }
