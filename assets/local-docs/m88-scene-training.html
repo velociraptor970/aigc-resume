@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>m88 场景画风训练</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../evidence-fix.css">
+    <style>
+      body {
+        margin: 0;
+        background: #f6f4fb;
+      }
+      .local-doc-shell {
+        width: min(920px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 56px 0 72px;
+      }
+      .local-doc-shell .evidence-card {
+        margin-top: 24px;
+      }
+      .local-doc-path {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border: 1px solid rgba(17, 17, 17, 0.14);
+        border-radius: 8px;
+        background: rgba(17, 17, 17, 0.04);
+        word-break: break-all;
+      }
+      button.button {
+        cursor: pointer;
+        font: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="local-doc-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Local Docs</p>
+        <h2>场景画风训练</h2>
+        <p class="section-subtitle">这份训练整理保留本地原件入口，主站只放索引卡片。</p>
+      </div>
+
+      <article class="evidence-card">
+        <span class="evidence-meta">DOCX / 96 MB</span>
+        <h3>【M88】场景画风训练 - Flux2 klein</h3>
+        <p>前期素材筛选、雾感素材处理、比例切割和 AI 补全的训练注意事项整理。</p>
+        <p class="local-doc-path">D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/【M88】场景画风训练-Flux2 klein  副本.docx</p>
+        <div class="evidence-actions">
+          <button class="button primary" data-local-file="D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/【M88】场景画风训练-Flux2 klein  副本.docx">打开本地原件</button>
+          <a class="button secondary" href="../../index.html#local-docs">返回主站入口</a>
+        </div>
+      </article>
+    </main>
+
+    <script>
+      document.querySelectorAll("[data-local-file]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = encodeURI(`file:///${button.dataset.localFile}`);
+          window.open(target, "_blank", "noopener");
+        });
+      });
+    </script>
+  </body>
+</html>

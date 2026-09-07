@@ -5753,6 +5753,17 @@ html body #evidence-shadow > .shadow-proof-layout > .evidence-shot figcaption { 
     margin-top: 0 !important;
     min-height: 0 !important;
   }
+  html body #evidence-texture-platform {
+    min-height: 0 !important;
+    padding-right: 24px !important;
+  }
+  html body #evidence-texture-platform > .evidence-media-wide {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    margin-top: 22px !important;
+  }
 }
 
 @media (max-width: 760px) {
