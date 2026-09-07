@@ -55,7 +55,7 @@ html body .main-case-card > .evidence-points,
 html body .main-case-card > a:not(.evidence-image-link) { grid-column:1 !important; }
 html body .main-case-card > .evidence-media-grid,
 html body .main-case-card > .shadow-proof-layout { grid-column:2 !important; grid-row:1 / span 6 !important; align-self:start !important; margin-top:0 !important; }
-html body #evidence-texture-platform > .evidence-media-wide { grid-column:2 !important; grid-row:1 / span 6 !important; }
+html body #evidence-texture-platform > .evidence-media-wide { grid-column:1 / -1 !important; grid-row:auto !important; }
 .project-card:focus-visible, .capability-card:focus-visible, .entry-card:focus-visible, .support-projects a:focus-visible, .button:focus-visible, .evidence-card a:focus-visible { outline:3px solid var(--accent) !important; outline-offset:3px !important; }
 @media (max-width:1100px){
   html body .main-case-grid{grid-template-columns:1fr !important;}
