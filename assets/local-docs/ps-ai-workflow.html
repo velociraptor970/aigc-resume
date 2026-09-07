@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ps ai 场景演示</title>
+    <title>PS-AI 工作整理</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../../evidence-fix.css">
     <style>
@@ -46,15 +46,15 @@
     <main class="local-doc-shell">
       <div class="section-heading">
         <p class="eyebrow">Local Docs</p>
-        <h2>ps-ai 场景演示</h2>
-        <p class="section-subtitle">这条大视频保留本地原件入口，主站只放索引卡片。</p>
+        <h2>PS-AI 工作整理</h2>
+        <p class="section-subtitle">这份整理稿在网页端只保留本地入口；如果你是在本机打开这个页面，按钮可以直开原件。</p>
       </div>
 
       <article class="evidence-card">
-        <span class="evidence-meta">MP4 / 209 MB</span>
-        <h3>ps-ai 场景演示</h3>
-        <p>本地演示视频原件，展示 PS-AI 场景流程。</p>
-        <p class="local-doc-path">D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/ps-ai场景演示.mp4</p>
+        <span class="evidence-meta">DOCX / 26 MB</span>
+        <h3>PS-AI 工作整理 副本</h3>
+        <p>本地原件，记录 PS-AI 工作流整理与岗位说明。</p>
+        <p class="local-doc-path">D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/PS-AI工作整理 副本.docx</p>
         <p class="local-doc-note" id="local-note">网页端不能直接打开本机 D 盘原件，请复制路径后在本机文件管理器中打开。</p>
         <div class="evidence-actions">
           <button class="button primary" id="open-local" type="button">打开本地原件</button>
@@ -65,12 +65,13 @@
     </main>
 
     <script>
-      const localFile = "D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/ps-ai场景演示.mp4";
+      const localFile = "D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/PS-AI工作整理 副本.docx";
       const localUrl = encodeURI(`file:///${localFile}`);
       const canOpenLocal =
         location.protocol === "file:" ||
         location.hostname === "localhost" ||
         location.hostname === "127.0.0.1";
+
       const openLocal = document.getElementById("open-local");
       const copyLocal = document.getElementById("copy-local");
       const localNote = document.getElementById("local-note");
@@ -102,7 +103,9 @@
       copyLocal.addEventListener("click", async () => {
         await copyText(localFile);
         copyLocal.textContent = "已复制";
-        setTimeout(() => { copyLocal.textContent = "复制本地路径"; }, 1200);
+        setTimeout(() => {
+          copyLocal.textContent = "复制本地路径";
+        }, 1200);
       });
     </script>
   </body>
