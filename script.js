@@ -174,7 +174,7 @@ function seekVideo(video, time) {
 }
 
 async function captureVideoPoster(video) {
-  if (!video || video.dataset.posterAutoCaptured === "1") return;
+  if (!video || video.dataset.posterAutoCaptured === "1" || video.dataset.posterLock === "1") return;
 
   const source = video.currentSrc || video.querySelector("source")?.src || video.getAttribute("src");
   if (!source) return;
