@@ -1,0 +1,2 @@
+assets/local-docs/ps-ai-scene-demo.mp4 filter=lfs diff=lfs merge=lfs -text
+assets/local-docs/pa-ai-detail-demo.mp4 filter=lfs diff=lfs merge=lfs -text

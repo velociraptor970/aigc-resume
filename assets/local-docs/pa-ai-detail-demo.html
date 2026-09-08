@@ -45,35 +45,28 @@
   <body>
     <main class="local-doc-shell">
       <div class="section-heading">
-        <p class="eyebrow">Local Docs</p>
+        <p class="eyebrow">GitHub Resources</p>
         <h2>PA-AI 立绘设计细化</h2>
-        <p class="section-subtitle">这条美宣流程大视频保留本地原件入口，主站只放索引卡片。</p>
+        <p class="section-subtitle">这条美宣流程大视频已经内置到仓库里，网页端会直接跳到 GitHub raw。</p>
       </div>
 
       <article class="evidence-card">
         <span class="evidence-meta">MP4 / 208 MB</span>
         <h3>PA-AI 立绘设计细化（1.25 倍数）</h3>
-        <p>本地演示视频原件，展示立绘设计细化流程。</p>
-        <p class="local-doc-path">D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/PA-AI立绘设计细化（1.25倍数）.mp4</p>
-        <p class="local-doc-note" id="local-note">网页端不能直接打开本机 D 盘原件，请复制路径后在本机文件管理器中打开。</p>
+        <p>仓库视频原件，展示立绘设计细化流程。</p>
+        <p class="local-doc-path">assets/local-docs/pa-ai-detail-demo.mp4</p>
+        <p class="local-doc-note" id="local-note">这是仓库里的视频，按钮会直接打开 GitHub raw 文件。</p>
         <div class="evidence-actions">
-          <button class="button primary" id="open-local" type="button">打开本地原件</button>
-          <button class="button secondary" id="copy-local" type="button">复制本地路径</button>
+          <a class="button primary" id="open-local" href="https://raw.githubusercontent.com/velociraptor970/aigc-resume/main/assets/local-docs/pa-ai-detail-demo.mp4" target="_blank" rel="noreferrer">打开仓库视频</a>
+          <button class="button secondary" id="copy-local" type="button">复制文件链接</button>
           <a class="button secondary" href="../../index.html#local-docs">返回主站入口</a>
         </div>
       </article>
     </main>
 
     <script>
-      const localFile = "D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/PA-AI立绘设计细化（1.25倍数）.mp4";
-      const localUrl = encodeURI(`file:///${localFile}`);
-      const canOpenLocal =
-        location.protocol === "file:" ||
-        location.hostname === "localhost" ||
-        location.hostname === "127.0.0.1";
-      const openLocal = document.getElementById("open-local");
+      const localUrl = "https://raw.githubusercontent.com/velociraptor970/aigc-resume/main/assets/local-docs/pa-ai-detail-demo.mp4";
       const copyLocal = document.getElementById("copy-local");
-      const localNote = document.getElementById("local-note");
 
       async function copyText(text) {
         try {
@@ -85,24 +78,14 @@
           // fall through to prompt
         }
 
-        window.prompt("复制下面这段本地路径：", text);
+        window.prompt("复制下面这段文件链接：", text);
         return false;
       }
 
-      if (canOpenLocal) {
-        localNote.textContent = "本机环境已就绪，按钮可直接打开原件。";
-        openLocal.addEventListener("click", () => {
-          window.location.href = localUrl;
-        });
-      } else {
-        openLocal.textContent = "网页端不能直开本地原件";
-        openLocal.disabled = true;
-      }
-
       copyLocal.addEventListener("click", async () => {
-        await copyText(localFile);
+        await copyText(localUrl);
         copyLocal.textContent = "已复制";
-        setTimeout(() => { copyLocal.textContent = "复制本地路径"; }, 1200);
+        setTimeout(() => { copyLocal.textContent = "复制文件链接"; }, 1200);
       });
     </script>
   </body>

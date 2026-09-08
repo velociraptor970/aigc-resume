@@ -45,36 +45,28 @@
   <body>
     <main class="local-doc-shell">
       <div class="section-heading">
-        <p class="eyebrow">Local Docs</p>
+        <p class="eyebrow">GitHub Resources</p>
         <h2>PS-AI 工作整理</h2>
-        <p class="section-subtitle">这份整理稿在网页端只保留本地入口；如果你是在本机打开这个页面，按钮可以直开原件。</p>
+        <p class="section-subtitle">这份整理稿已经内置到仓库里，网页端可以直接打开。</p>
       </div>
 
       <article class="evidence-card">
         <span class="evidence-meta">DOCX / 26 MB</span>
         <h3>PS-AI 工作整理 副本</h3>
-        <p>本地原件，记录 PS-AI 工作流整理与岗位说明。</p>
-        <p class="local-doc-path">D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/PS-AI工作整理 副本.docx</p>
-        <p class="local-doc-note" id="local-note">网页端不能直接打开本机 D 盘原件，请复制路径后在本机文件管理器中打开。</p>
+        <p>仓库原件，记录 PS-AI 工作流整理与岗位说明。</p>
+        <p class="local-doc-path">assets/local-docs/PS-AI工作整理 副本.docx</p>
+        <p class="local-doc-note" id="local-note">这是仓库里的文件，按钮会直接打开 GitHub Pages 上的原件。</p>
         <div class="evidence-actions">
-          <button class="button primary" id="open-local" type="button">打开本地原件</button>
-          <button class="button secondary" id="copy-local" type="button">复制本地路径</button>
+          <a class="button primary" id="open-local" href="PS-AI工作整理 副本.docx" target="_blank" rel="noreferrer">打开仓库原件</a>
+          <button class="button secondary" id="copy-local" type="button">复制文件链接</button>
           <a class="button secondary" href="../../index.html#local-docs">返回主站入口</a>
         </div>
       </article>
     </main>
 
     <script>
-      const localFile = "D:/lls/焦晨栩_AIGC作品集_面试包_20260831-1116/local-docs/PS-AI工作整理 副本.docx";
-      const localUrl = encodeURI(`file:///${localFile}`);
-      const canOpenLocal =
-        location.protocol === "file:" ||
-        location.hostname === "localhost" ||
-        location.hostname === "127.0.0.1";
-
-      const openLocal = document.getElementById("open-local");
+      const localUrl = new URL("PS-AI工作整理 副本.docx", document.baseURI).href;
       const copyLocal = document.getElementById("copy-local");
-      const localNote = document.getElementById("local-note");
 
       async function copyText(text) {
         try {
@@ -86,25 +78,15 @@
           // fall through to prompt
         }
 
-        window.prompt("复制下面这段本地路径：", text);
+        window.prompt("复制下面这段文件链接：", text);
         return false;
       }
 
-      if (canOpenLocal) {
-        localNote.textContent = "本机环境已就绪，按钮可直接打开原件。";
-        openLocal.addEventListener("click", () => {
-          window.location.href = localUrl;
-        });
-      } else {
-        openLocal.textContent = "网页端不能直开本地原件";
-        openLocal.disabled = true;
-      }
-
       copyLocal.addEventListener("click", async () => {
-        await copyText(localFile);
+        await copyText(localUrl);
         copyLocal.textContent = "已复制";
         setTimeout(() => {
-          copyLocal.textContent = "复制本地路径";
+          copyLocal.textContent = "复制文件链接";
         }, 1200);
       });
     </script>
