@@ -32,10 +32,10 @@ const themeDetails = {
     proof: "插件演示截图、功能反馈记录、局部重绘案例、去噪补充工作流",
   },
   jbt: {
-    title: "吉比特外露展示",
-    copy: "对外可讲的两块内容：AI×美宣的执行链路，以及 LoRA 对道具 / 场景训练集的思路和结果。",
-    keywords: "AI×美宣、LoRA 训练、道具 / 场景、风格控制、结果反馈",
-    proof: "吉比特外露长图、AI×美宣页面、LoRA 训练页面",
+    title: "吉比特补充材料",
+    copy: "两页补充：美宣协作链路、LoRA 训练集思路和结果。",
+    keywords: "美宣协作、LoRA 训练、道具/场景、风格控制、结果反馈",
+    proof: "吉比特长图、美宣协作、LoRA 训练",
   },
   "texture-platform": {
     title: "公司自研 3D 贴图软件工具链",
