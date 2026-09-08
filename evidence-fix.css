@@ -185,9 +185,50 @@
     margin-top: 0 !important;
   }
 
-  html body #evidence-jbt .jbt-preview-grid {
+  /* Keep JBT in the same evidence-card grammar as the public-platform card:
+     factual summary and data strip on the left, proof images on the right. */
+  html body #evidence-jbt.evidence-card {
+    padding: 20px !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr) !important;
+    column-gap: 24px !important;
+  }
+
+  html body #evidence-jbt > .evidence-meta,
+  html body #evidence-jbt > h3,
+  html body #evidence-jbt > p,
+  html body #evidence-jbt > .pipeline-data-strip,
+  html body #evidence-jbt > .experience-links {
+    grid-column: 1 !important;
+  }
+
+  html body #evidence-jbt > .pipeline-data-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 16px 0 2px !important;
+  }
+
+  html body #evidence-jbt > .pipeline-data-strip div {
+    min-height: 58px !important;
+    padding: 8px !important;
+  }
+
+  html body #evidence-jbt > .pipeline-data-strip strong {
+    font-size: 15px !important;
+  }
+
+  html body #evidence-jbt > .pipeline-data-strip span {
+    font-size: 10.5px !important;
+    line-height: 1.3 !important;
+  }
+
+  html body #evidence-jbt > .evidence-media-grid {
+    grid-column: 2 !important;
+    grid-row: 1 / span 5 !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px !important;
+    align-self: start !important;
+    align-content: start !important;
+    margin-top: 0 !important;
   }
 
   html body #evidence-jbt .jbt-preview-shot {
@@ -209,66 +250,8 @@
     object-position: bottom center !important;
   }
 
-  html body #evidence-jbt.evidence-card {
-    padding: 12px 14px !important;
-    grid-template-columns: minmax(0, 1.08fr) minmax(220px, 0.92fr) !important;
-    column-gap: 12px !important;
-  }
-
-  html body #evidence-jbt .evidence-meta {
-    margin-bottom: 2px !important;
-  }
-
-  html body #evidence-jbt h3 {
-    margin-top: 8px !important;
-    font-size: 18px !important;
-    line-height: 1.18 !important;
-  }
-
-  html body #evidence-jbt > p {
-    margin-top: 6px !important;
-    font-size: 13px !important;
-    line-height: 1.45 !important;
-  }
-
-  html body #evidence-jbt .case-data-row {
-    margin-top: 10px !important;
-    gap: 6px !important;
-  }
-
-  html body #evidence-jbt .case-data-row span {
-    min-height: 44px !important;
-    padding: 7px 9px !important;
-    font-size: 12.5px !important;
-  }
-
-  html body #evidence-jbt .evidence-points {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 6px !important;
-    margin-top: 0 !important;
-  }
-
-  html body #evidence-jbt .evidence-points div {
-    min-height: 64px !important;
-    padding: 7px 9px !important;
-  }
-
-  html body #evidence-jbt .evidence-points dd {
-    line-height: 1.35 !important;
-  }
-
-  html body #evidence-jbt .evidence-media-grid {
-    grid-column: 2 !important;
-    grid-row: 1 / span 4 !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-    align-self: start !important;
-    align-content: start !important;
-  }
-
-  html body #evidence-jbt .jbt-preview-shot img {
-    height: 132px !important;
-    max-height: 132px !important;
+  html body #evidence-jbt > .experience-links {
+    margin-top: 12px !important;
   }
 
   /* 03 uses its own compact rhythm. Do not let the media column stretch
