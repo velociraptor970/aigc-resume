@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>仗剑传说</title>
+    <title>仗剑传说预览</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../../evidence-fix.css">
     <style>
@@ -12,12 +12,55 @@
         background: #f6f4fb;
       }
       .local-doc-shell {
-        width: min(920px, calc(100% - 32px));
+        width: min(1120px, calc(100% - 32px));
         margin: 0 auto;
         padding: 56px 0 72px;
       }
       .local-doc-shell .evidence-card {
         margin-top: 24px;
+      }
+      .preview-frame {
+        margin-top: 20px;
+        overflow: hidden;
+        border: 2px solid rgba(17, 17, 17, 0.18);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.12);
+      }
+      .preview-frame iframe {
+        display: block;
+        width: 100%;
+        height: 72vh;
+        border: 0;
+        background: #fff;
+      }
+      .preview-doc-cover {
+        display: grid;
+        gap: 16px;
+        padding: 28px;
+        min-height: 72vh;
+        background:
+          linear-gradient(180deg, rgba(17, 199, 201, 0.08), rgba(255, 255, 255, 0.92)),
+          #fff;
+      }
+      .preview-doc-cover h4 {
+        margin: 0;
+        font-size: 28px;
+        line-height: 1.15;
+      }
+      .preview-doc-cover p {
+        margin: 0;
+        color: rgba(17, 17, 17, 0.76);
+        line-height: 1.6;
+      }
+      .preview-doc-cover ul {
+        margin: 0;
+        padding-left: 20px;
+        color: rgba(17, 17, 17, 0.82);
+        line-height: 1.75;
+      }
+      .preview-doc-cover li + li {
+        margin-top: 8px;
       }
       .local-doc-path {
         margin-top: 16px;
@@ -32,13 +75,9 @@
         color: rgba(17, 17, 17, 0.68);
         line-height: 1.55;
       }
-      button.button {
+      .button {
         cursor: pointer;
         font: inherit;
-      }
-      button.button[disabled] {
-        cursor: not-allowed;
-        opacity: 0.56;
       }
     </style>
   </head>
@@ -47,7 +86,7 @@
       <div class="section-heading">
         <p class="eyebrow">GitHub Resources</p>
         <h2>仗剑传说</h2>
-        <p class="section-subtitle">这份训练整理已经内置到仓库里，网页端可以直接打开。</p>
+        <p class="section-subtitle">这里打开的是仓库内预览页，不直连原件下载。</p>
       </div>
 
       <article class="evidence-card">
@@ -55,18 +94,25 @@
         <h3>仗剑传说 - Flux2 klein</h3>
         <p>前期素材筛选、雾感素材处理、比例切割和 AI 补全的训练注意事项整理。</p>
         <p class="local-doc-path">assets/local-docs/【M88】场景画风训练-Flux2 klein  副本.docx</p>
-        <p class="local-doc-note" id="local-note">这是仓库里的文件，按钮会直接打开 GitHub Pages 上的原件。</p>
+        <div class="preview-frame" id="preview">
+          <iframe id="preview-frame" title="仗剑传说在线预览" loading="lazy"></iframe>
+        </div>
+        <p class="local-doc-note">网页保留预览入口，不再把用户带去原件下载页。</p>
         <div class="evidence-actions">
-          <a class="button primary" id="open-local" href="【M88】场景画风训练-Flux2 klein  副本.docx" target="_blank" rel="noreferrer">打开仓库原件</a>
-          <button class="button secondary" id="copy-local" type="button">复制文件链接</button>
+          <a class="button primary" id="open-local" href="#preview">查看预览框</a>
+          <button class="button secondary" id="copy-local" type="button">复制预览链接</button>
           <a class="button secondary" href="../../index.html#local-docs">返回主站入口</a>
         </div>
       </article>
     </main>
 
     <script>
-      const localUrl = new URL("【M88】场景画风训练-Flux2 klein  副本.docx", document.baseURI).href;
+      const docUrl = new URL("【M88】场景画风训练-Flux2 klein  副本.docx", document.baseURI).href;
+      const previewUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(docUrl)}`;
       const copyLocal = document.getElementById("copy-local");
+      const previewFrame = document.getElementById("preview-frame");
+
+      previewFrame.src = previewUrl;
 
       async function copyText(text) {
         try {
@@ -78,14 +124,16 @@
           // fall through to prompt
         }
 
-        window.prompt("复制下面这段文件链接：", text);
+        window.prompt("复制下面这段预览链接：", text);
         return false;
       }
 
       copyLocal.addEventListener("click", async () => {
-        await copyText(localUrl);
+        await copyText(location.href);
         copyLocal.textContent = "已复制";
-        setTimeout(() => { copyLocal.textContent = "复制文件链接"; }, 1200);
+        setTimeout(() => {
+          copyLocal.textContent = "复制预览链接";
+        }, 1200);
       });
     </script>
   </body>

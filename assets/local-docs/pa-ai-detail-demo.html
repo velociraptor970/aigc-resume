@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>pa ai 立绘设计细化</title>
+    <title>pa ai 立绘设计细化预览</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="../../evidence-fix.css">
     <style>
@@ -12,33 +12,61 @@
         background: #f6f4fb;
       }
       .local-doc-shell {
-        width: min(920px, calc(100% - 32px));
+        width: min(1040px, calc(100% - 32px));
         margin: 0 auto;
         padding: 56px 0 72px;
       }
-      .local-doc-shell .evidence-card {
-        margin-top: 24px;
+      .preview-frame {
+        margin-top: 20px;
+        overflow: hidden;
+        border: 2px solid rgba(17, 17, 17, 0.18);
+        border-radius: 8px;
+        background: linear-gradient(180deg, rgba(17, 199, 201, 0.09), rgba(255, 255, 255, 0.96));
+        box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.12);
+      }
+      .video-entry-cover {
+        display: grid;
+        gap: 16px;
+        min-height: 48vh;
+        padding: 28px;
+        align-content: start;
+      }
+      .video-entry-cover h4 {
+        margin: 0;
+        font-size: 28px;
+        line-height: 1.15;
+      }
+      .video-entry-cover p {
+        margin: 0;
+        color: rgba(17, 17, 17, 0.76);
+        line-height: 1.65;
+      }
+      .video-entry-cover ul {
+        margin: 0;
+        padding-left: 20px;
+        line-height: 1.75;
+        color: rgba(17, 17, 17, 0.82);
+      }
+      .video-entry-cover li + li {
+        margin-top: 8px;
+      }
+      .local-doc-path,
+      .local-doc-note {
+        margin-top: 14px;
+        color: rgba(17, 17, 17, 0.68);
+        line-height: 1.55;
       }
       .local-doc-path {
-        margin-top: 16px;
         padding: 14px 16px;
         border: 1px solid rgba(17, 17, 17, 0.14);
         border-radius: 8px;
         background: rgba(17, 17, 17, 0.04);
+        color: rgba(17, 17, 17, 0.86);
         word-break: break-all;
       }
-      .local-doc-note {
-        margin-top: 12px;
-        color: rgba(17, 17, 17, 0.68);
-        line-height: 1.55;
-      }
-      button.button {
+      .button {
         cursor: pointer;
         font: inherit;
-      }
-      button.button[disabled] {
-        cursor: not-allowed;
-        opacity: 0.56;
       }
     </style>
   </head>
@@ -47,26 +75,37 @@
       <div class="section-heading">
         <p class="eyebrow">GitHub Resources</p>
         <h2>PA-AI 立绘设计细化</h2>
-        <p class="section-subtitle">这条美宣流程大视频已经内置到仓库里，网页端会直接跳到 GitHub raw。</p>
+        <p class="section-subtitle">这条视频改走 GitHub 文件页，避免 Pages 直碰 LFS 大文件。</p>
       </div>
 
       <article class="evidence-card">
         <span class="evidence-meta">MP4 / 208 MB</span>
         <h3>PA-AI 立绘设计细化（1.25 倍数）</h3>
         <p>仓库视频原件，展示立绘设计细化流程。</p>
-        <p class="local-doc-path">assets/local-docs/pa-ai-detail-demo.mp4</p>
-        <p class="local-doc-note" id="local-note">这是仓库里的视频，按钮会直接打开 GitHub raw 文件。</p>
+        <p class="local-doc-path">GitHub 文件页 / assets/local-docs/pa-ai-detail-demo.mp4</p>
+        <div class="preview-frame" id="player">
+          <div class="video-entry-cover">
+            <h4>GitHub 视频页入口</h4>
+            <p>GitHub Pages 不直接托管这类 LFS 大视频。这里改成跳转到 GitHub 文件页，仍然是页面，不会把用户带去 raw 下载页。</p>
+            <ul>
+              <li>立绘设计细化流程</li>
+              <li>大文件改走 GitHub 页面</li>
+              <li>避免 raw 直链下载</li>
+            </ul>
+          </div>
+        </div>
+        <p class="local-doc-note">如果要看完整文件，就打开 GitHub 文件页；主站这里只保留稳定入口。</p>
         <div class="evidence-actions">
-          <a class="button primary" id="open-local" href="https://raw.githubusercontent.com/velociraptor970/aigc-resume/main/assets/local-docs/pa-ai-detail-demo.mp4" target="_blank" rel="noreferrer">打开仓库视频</a>
-          <button class="button secondary" id="copy-local" type="button">复制文件链接</button>
+          <a class="button primary" id="open-local" href="https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/pa-ai-detail-demo.mp4" target="_blank" rel="noreferrer">打开 GitHub 视频页</a>
+          <button class="button secondary" id="copy-local" type="button">复制预览链接</button>
           <a class="button secondary" href="../../index.html#local-docs">返回主站入口</a>
         </div>
       </article>
     </main>
 
     <script>
-      const localUrl = "https://raw.githubusercontent.com/velociraptor970/aigc-resume/main/assets/local-docs/pa-ai-detail-demo.mp4";
       const copyLocal = document.getElementById("copy-local");
+      const previewUrl = "https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/pa-ai-detail-demo.mp4";
 
       async function copyText(text) {
         try {
@@ -78,14 +117,16 @@
           // fall through to prompt
         }
 
-        window.prompt("复制下面这段文件链接：", text);
+        window.prompt("复制下面这段预览链接：", text);
         return false;
       }
 
       copyLocal.addEventListener("click", async () => {
-        await copyText(localUrl);
+        await copyText(previewUrl);
         copyLocal.textContent = "已复制";
-        setTimeout(() => { copyLocal.textContent = "复制文件链接"; }, 1200);
+        setTimeout(() => {
+          copyLocal.textContent = "复制预览链接";
+        }, 1200);
       });
     </script>
   </body>

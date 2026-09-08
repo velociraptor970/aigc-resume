@@ -248,19 +248,19 @@
             <span class="capability-index">2D</span>
             <h3>2D｜抠图方法</h3>
             <p>软边缘、半透明与动画素材的批量处理方法。</p>
-            <a class="card-jump-link" href="#evidence-matting">进入案例</a>
+            <span class="card-jump-link card-jump-note">证据在下方展开</span>
           </article>
           <article class="capability-card capability-card-main reveal" data-theme-target="pbr">
             <span class="capability-index">3D+2D</span>
             <h3>3D+2D｜阴影交付</h3>
             <p>AO、接触阴影与可编辑图层的交付方式。</p>
-            <a class="card-jump-link" href="#evidence-shadow">进入案例</a>
+            <span class="card-jump-link card-jump-note">证据在下方展开</span>
           </article>
           <article class="capability-card capability-card-main reveal" data-theme-target="texture-platform">
             <span class="capability-index">3D</span>
             <h3>3D｜工具链重构</h3>
             <p>双图材质编辑、贴图回写与旧版替换流程。</p>
-            <a class="card-jump-link" href="#evidence-texture-platform">进入案例</a>
+            <span class="card-jump-link card-jump-note">证据在下方展开</span>
           </article>
         </div>
         <div class="support-capabilities reveal" aria-label="补充能力">
@@ -268,6 +268,7 @@
           <a data-theme-target="pipeline" href="#evidence-pipeline">方法沉淀</a>
           <a data-theme-target="asset" href="#evidence-lora">LoRA / 场景适配</a>
           <a data-theme-target="tooling" href="#evidence-psai">PS-AI 协作判断</a>
+          <a data-theme-target="jbt" href="#evidence-jbt">吉比特外露</a>
         </div>
       </section>
 
@@ -464,7 +465,7 @@
           <article class="evidence-card main-case-card reveal" id="evidence-texture-platform">
             <span class="evidence-meta">03 / 3D Tooling</span>
             <h3>3D：公司自研 3D 贴图软件工具链</h3>
-            <p>围绕公司自研 3D 贴图软件的模型上贴图能力，重构双图材质编辑工作流，形成贴图生成到平台调用的闭环。</p>
+            <p>围绕公司自研 3D 贴图能力，重构双图材质编辑与回写流程，打通贴图生成到平台调用的闭环。</p>
             <div class="case-data-row" aria-label="3D 贴图软件结果数据">
               <span><strong>V3</strong>流程上线</span>
               <span><strong>双图</strong>材质编辑</span>
@@ -473,19 +474,19 @@
             <dl class="evidence-points" aria-label="自研 3D 贴图软件证据链">
               <div>
                 <dt>背景</dt>
-                <dd>公司自研 3D 贴图软件需要稳定的模型上贴图和局部重绘流程。</dd>
+                <dd>需要稳定的上贴图和局部重绘流程。</dd>
               </div>
               <div>
                 <dt>判断</dt>
-                <dd>围绕白膜贴图、双图材质编辑、局部重绘、保存和输出回写，确认工具链能否形成生产闭环。</dd>
+                <dd>白膜贴图、双图编辑、回写要串成闭环。</dd>
               </div>
               <div>
                 <dt>流程</dt>
-                <dd>重构 Flux2 Klein TrueV3 双图材质编辑流程，串联本地绘制、云端生成、局部重绘、保存和平台调用。</dd>
+                <dd>重构 TrueV3 双图流程，串联本地绘制、云端生成、保存调用。</dd>
               </div>
               <div>
                 <dt>结果</dt>
-                <dd>重做版本替换旧版贴图 / 局部重绘流程并上线，进入公司自研 3D 贴图软件。</dd>
+                <dd>旧版替换后上线，进入公司自研 3D 贴图软件。</dd>
               </div>
             </dl>
             <div class="evidence-media-grid evidence-media-wide">
@@ -542,6 +543,48 @@
               </figure>
             </div>
           </article>
+          <article class="evidence-card reveal" id="evidence-jbt">
+            <span class="evidence-meta">JBT / Exposed Capability</span>
+            <h3>吉比特：AI×美宣 + LoRA 训练</h3>
+            <p>对外可讲的两块内容：一块是 AI 如何接入美宣执行链，另一块是 LoRA 对道具 / 场景训练集的思路与结果。</p>
+            <div class="case-data-row" aria-label="吉比特外露摘要">
+              <span><strong>AI×美宣</strong>需求判断</span>
+              <span><strong>LoRA</strong>训练集思路</span>
+              <span><strong>外露</strong>可讲页面</span>
+            </div>
+            <dl class="evidence-points" aria-label="吉比特外露证据链">
+              <div>
+                <dt>背景</dt>
+                <dd>AI×美宣与 LoRA 都可以作为对外展示的补充材料。</dd>
+              </div>
+              <div>
+                <dt>判断</dt>
+                <dd>前者看执行链路，后者看训练集思路和结果。</dd>
+              </div>
+              <div>
+                <dt>流程</dt>
+                <dd>拆成两页入口，方便在面试里快速讲清楚。</dd>
+              </div>
+              <div>
+                <dt>结果</dt>
+                <dd>作为补充能力索引，和主线项目一起补全经历。</dd>
+              </div>
+            </dl>
+            <div class="evidence-media-grid jbt-preview-grid">
+              <figure class="evidence-shot jbt-preview-shot jbt-preview-top evidence-image-tall">
+                <img src="assets/jbt-external.jpg" alt="吉比特可外露内容总览，上半段展示 AI 与美宣结合部分">
+                <figcaption>AI×美宣</figcaption>
+              </figure>
+              <figure class="evidence-shot jbt-preview-shot jbt-preview-bottom evidence-image-tall">
+                <img src="assets/jbt-external.jpg" alt="吉比特可外露内容总览，下半段展示 LoRA 训练思路和结果部分">
+                <figcaption>LoRA 训练</figcaption>
+              </figure>
+            </div>
+            <div class="experience-links">
+              <a href="assets/local-docs/jbt-ai-art.html">AI×美宣页</a>
+              <a href="assets/local-docs/jbt-lora-training.html">LoRA 训练页</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -549,24 +592,24 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Local Docs</p>
           <h2 id="local-docs-title">GitHub 资源入口</h2>
-          <p class="section-subtitle">这批整理稿已经放进仓库，网页可以直接跳到对应文档或视频。</p>
+          <p class="section-subtitle">前两个是页内预览，不直连原件下载；后两个改走 GitHub 视频页入口。</p>
         </div>
         <div class="support-projects reveal" aria-label="本地文档索引">
-          <a href="assets/local-docs/PS-AI工作整理 副本.docx" target="_blank" rel="noreferrer">
+          <a href="assets/local-docs/ps-ai-workflow.html" target="_blank" rel="noreferrer">
             <strong>PS-AI 工作整理</strong>
-            <em>仓库原件 / DOCX / 26 MB / 工作流整理与岗位说明</em>
+            <em>HTML 预览 / 文档入口 / 26 MB / 工作流整理与岗位说明</em>
           </a>
-          <a href="assets/local-docs/【M88】场景画风训练-Flux2 klein  副本.docx" target="_blank" rel="noreferrer">
+          <a href="assets/local-docs/m88-scene-training.html" target="_blank" rel="noreferrer">
             <strong>仗剑传说</strong>
-            <em>仓库原件 / DOCX / 96 MB / 大体量训练整理</em>
+            <em>HTML 预览 / 文档入口 / 96 MB / 大体量训练整理</em>
           </a>
           <a href="assets/local-docs/ps-ai-scene-demo.html" target="_blank" rel="noreferrer">
             <strong>ps-ai 场景演示</strong>
-            <em>页面入口 / MP4 / 209 MB / 大视频入口</em>
+            <em>GitHub 页面 / 视频入口 / 209 MB / 大视频入口</em>
           </a>
           <a href="assets/local-docs/pa-ai-detail-demo.html" target="_blank" rel="noreferrer">
             <strong>PA-AI 立绘设计细化</strong>
-            <em>页面入口 / MP4 / 208 MB / 美宣流程入口</em>
+            <em>GitHub 页面 / 视频入口 / 208 MB / 美宣流程入口</em>
           </a>
         </div>
       </section>

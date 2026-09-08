@@ -151,9 +151,17 @@
     justify-self: start !important;
     margin-left: -4px !important;
     margin-right: auto !important;
-    width: min(100%, 260px) !important;
-    max-width: 260px !important;
+    width: min(100%, 240px) !important;
+    max-width: 240px !important;
     margin-top: -4px !important;
+  }
+
+  html body #evidence-texture-platform > .evidence-media-wide > .evidence-shot img {
+    width: 100% !important;
+    height: 300px !important;
+    max-height: 300px !important;
+    object-fit: cover !important;
+    object-position: top center !important;
   }
 
   html body .support-evidence-grid {
@@ -175,5 +183,29 @@
     width: 100% !important;
     align-self: start !important;
     margin-top: 0 !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-shot {
+    overflow: hidden !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-shot img {
+    width: 100% !important;
+    height: 176px !important;
+    max-height: 176px !important;
+    object-fit: cover !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-top img {
+    object-position: top center !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-bottom img {
+    object-position: bottom center !important;
   }
 }
