@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>吉比特｜LoRA 训练</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../evidence-fix.css">
+    <style>
+      body {
+        margin: 0;
+        background: #f6f4fb;
+      }
+      .local-doc-shell {
+        width: min(1040px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 56px 0 72px;
+      }
+      .local-doc-shell .evidence-card {
+        margin-top: 24px;
+      }
+      .local-doc-note {
+        margin: 14px 0 0;
+        color: rgba(17, 17, 17, 0.68);
+        line-height: 1.55;
+      }
+      .local-pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 0;
+      }
+      .local-pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 4px 10px;
+        border: 1px solid rgba(17, 17, 17, 0.16);
+        border-radius: 999px;
+        background: rgba(17, 199, 201, 0.08);
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .preview-frame {
+        margin-top: 22px;
+        overflow: hidden;
+        border: 2px solid rgba(17, 17, 17, 0.18);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.12);
+      }
+      .preview-frame img {
+        display: block;
+        width: 100%;
+        height: 64vh;
+        object-fit: cover;
+      }
+      .preview-bottom img {
+        object-position: center bottom;
+      }
+      .evidence-actions {
+        margin-top: 20px;
+      }
+      .button {
+        cursor: pointer;
+        font: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="local-doc-shell">
+      <div class="section-heading">
+        <p class="eyebrow">GitHub Resources / JBT</p>
+        <h2>吉比特｜LoRA 训练</h2>
+        <p class="section-subtitle">把道具 / 场景训练集思路和结果单独拆出来，重点讲数据选择、收敛方式和输出效果。</p>
+      </div>
+
+      <article class="evidence-card">
+        <span class="evidence-meta">外露展示 / LoRA</span>
+        <h3>训练集思路与结果</h3>
+        <p>这一页适合对外说明：LoRA 不是只讲模型本身，而是讲训练集怎么选、怎么整理、怎么落到道具和场景结果上。</p>
+        <div class="local-pill-row" aria-label="关键词">
+          <span class="local-pill">训练集思路</span>
+          <span class="local-pill">道具 / 场景</span>
+          <span class="local-pill">结果反馈</span>
+        </div>
+        <figure class="preview-frame preview-bottom" aria-label="吉比特外露内容下半段预览">
+          <img src="../jbt-external.jpg" alt="吉比特可外露内容总览，下半段展示 LoRA 训练思路和结果部分">
+        </figure>
+        <p class="local-doc-note">这张长图已经放进仓库，可直接作为对外展示入口。</p>
+        <div class="evidence-actions">
+          <a class="button primary" href="../../index.html#experience">回到吉比特经历</a>
+          <a class="button secondary" href="../../index.html#evidence-lora">看主站证据</a>
+          <a class="button secondary" href="../../index.html">返回主站首页</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
