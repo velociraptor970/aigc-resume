@@ -134,6 +134,124 @@ document.querySelectorAll(".evidence-shot img").forEach((image) => {
   link.appendChild(image);
 });
 
+function scorePosterFrame(canvas) {
+  const ctx = canvas.getContext("2d", { willReadFrequently: true });
+  if (!ctx) return -1;
+
+  const { data, width, height } = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let sum = 0;
+  let sumSq = 0;
+  const total = width * height;
+
+  for (let i = 0; i < data.length; i += 4) {
+    const luminance = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+    sum += luminance;
+    sumSq += luminance * luminance;
+  }
+
+  const mean = sum / total;
+  return sumSq / total - mean * mean;
+}
+
+function seekVideo(video, time) {
+  return new Promise((resolve, reject) => {
+    const onSeeked = () => {
+      video.removeEventListener("seeked", onSeeked);
+      video.removeEventListener("error", onError);
+      resolve();
+    };
+
+    const onError = () => {
+      video.removeEventListener("seeked", onSeeked);
+      video.removeEventListener("error", onError);
+      reject(new Error("video error"));
+    };
+
+    video.addEventListener("seeked", onSeeked, { once: true });
+    video.addEventListener("error", onError, { once: true });
+    video.currentTime = time;
+  });
+}
+
+async function captureVideoPoster(video) {
+  if (!video || video.dataset.posterAutoCaptured === "1") return;
+
+  const source = video.currentSrc || video.querySelector("source")?.src || video.getAttribute("src");
+  if (!source) return;
+
+  const probe = document.createElement("video");
+  probe.preload = "auto";
+  probe.muted = true;
+  probe.playsInline = true;
+  probe.crossOrigin = video.crossOrigin || "anonymous";
+  probe.src = source;
+
+  try {
+    await new Promise((resolve, reject) => {
+      const onLoaded = () => {
+        probe.removeEventListener("loadedmetadata", onLoaded);
+        probe.removeEventListener("error", onError);
+        resolve();
+      };
+      const onError = () => {
+        probe.removeEventListener("loadedmetadata", onLoaded);
+        probe.removeEventListener("error", onError);
+        reject(new Error("video load failed"));
+      };
+      probe.addEventListener("loadedmetadata", onLoaded, { once: true });
+      probe.addEventListener("error", onError, { once: true });
+      probe.load();
+    });
+
+    const duration = Number.isFinite(probe.duration) && probe.duration > 0 ? probe.duration : 0;
+    const candidateTimes = [0.35, 0.8, 1.2, 1.8, 2.4]
+      .map((time) => (duration > 0 ? Math.min(time, Math.max(duration - 0.1, 0.05)) : time))
+      .filter((time, index, list) => list.indexOf(time) === index && time >= 0.05);
+
+    let bestDataUrl = "";
+    let bestScore = -1;
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d", { willReadFrequently: true });
+    if (!context) return;
+
+    for (const candidateTime of candidateTimes) {
+      try {
+        await seekVideo(probe, candidateTime);
+      } catch (error) {
+        continue;
+      }
+
+      const width = Math.max(320, probe.videoWidth || 0);
+      const height = Math.max(180, probe.videoHeight || 0);
+      const scale = Math.min(1, 640 / width);
+      canvas.width = Math.max(1, Math.round(width * scale));
+      canvas.height = Math.max(1, Math.round(height * scale));
+      context.drawImage(probe, 0, 0, canvas.width, canvas.height);
+
+      const score = scorePosterFrame(canvas);
+      if (score > bestScore) {
+        bestScore = score;
+        bestDataUrl = canvas.toDataURL("image/jpeg", 0.86);
+      }
+    }
+
+    if (bestDataUrl) {
+      video.poster = bestDataUrl;
+      video.dataset.posterAutoCaptured = "1";
+    }
+  } catch (error) {
+    console.warn("无法自动生成视频封面：", error);
+  }
+}
+
+function initVideoPosters() {
+  document.querySelectorAll(".evidence-video-shot video").forEach((video) => {
+    captureVideoPoster(video);
+  });
+}
+
+initVideoPosters();
+
 window.addEventListener("load", () => {
   body.classList.add("page-ready");
 });
