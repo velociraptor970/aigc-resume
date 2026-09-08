@@ -14,92 +14,55 @@
       .local-doc-shell {
         width: min(1040px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 56px 0 72px;
-      }
-      .preview-frame {
-        margin-top: 20px;
-        overflow: hidden;
-        border: 2px solid rgba(17, 17, 17, 0.18);
-        border-radius: 8px;
-        background: linear-gradient(180deg, rgba(125, 92, 255, 0.09), rgba(255, 255, 255, 0.96));
-        box-shadow: 6px 6px 0 rgba(17, 17, 17, 0.12);
-      }
-      .video-entry-cover {
-        display: grid;
-        gap: 16px;
-        min-height: 48vh;
-        padding: 28px;
-        align-content: start;
-      }
-      .local-video-viewer {
-        display: grid;
-        gap: 14px;
-        padding: 28px;
+        padding: 48px 0 64px;
       }
       .local-video-stage {
         display: grid;
-        gap: 18px;
-        min-height: 48vh;
+        gap: 14px;
+        min-height: 0;
+        padding: 20px;
+        border: 1px dashed rgba(17, 17, 17, 0.28);
+        border-radius: 8px;
+        background: rgba(125, 92, 255, 0.045);
         align-content: start;
       }
       .local-video-stage.is-dragover {
-        background: rgba(125, 92, 255, 0.07);
+        background: rgba(125, 92, 255, 0.1);
+        border-color: rgba(125, 92, 255, 0.72);
       }
-      .video-entry-cover h4 {
-        margin: 0;
-        font-size: 28px;
-        line-height: 1.15;
-      }
-      .video-entry-cover p {
-        margin: 0;
-        color: rgba(17, 17, 17, 0.76);
-        line-height: 1.65;
-      }
-      .video-entry-cover ul {
-        margin: 0;
-        padding-left: 20px;
-        line-height: 1.75;
-        color: rgba(17, 17, 17, 0.82);
-      }
-      .video-entry-cover li + li {
-        margin-top: 8px;
-      }
-      .local-doc-path,
-      .local-doc-note {
-        margin-top: 14px;
-        color: rgba(17, 17, 17, 0.68);
-        line-height: 1.55;
-      }
-      .local-doc-path {
-        padding: 14px 16px;
-        border: 1px solid rgba(17, 17, 17, 0.14);
-        border-radius: 8px;
-        background: rgba(17, 17, 17, 0.04);
-        color: rgba(17, 17, 17, 0.86);
-        word-break: break-all;
-      }
-      .local-video-placeholder {
+      .local-video-placeholder,
+      .local-video-viewer {
         display: grid;
-        gap: 14px;
-        min-height: 48vh;
-        padding: 28px;
+        gap: 12px;
+        min-height: 0;
+        padding: 0;
         align-content: start;
       }
       .local-video-placeholder h4,
       .local-video-viewer h4 {
         margin: 0;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 1.15;
       }
       .local-video-placeholder p,
       .local-video-viewer p {
         margin: 0;
         color: rgba(17, 17, 17, 0.76);
-        line-height: 1.65;
+        line-height: 1.55;
+      }
+      .local-doc-path,
+      .local-doc-note {
+        margin: 10px 0 0;
+        color: rgba(17, 17, 17, 0.68);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .local-doc-path {
+        word-break: break-all;
       }
       .local-video-player {
         width: 100%;
-        min-height: 360px;
+        min-height: 320px;
         max-height: 68vh;
         border: 1px solid rgba(17, 17, 17, 0.14);
         border-radius: 8px;
@@ -107,6 +70,7 @@
         box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.42);
       }
       .local-video-name {
+        margin: 0;
         color: rgba(17, 17, 17, 0.68);
         word-break: break-all;
       }
@@ -121,54 +85,39 @@
       <div class="section-heading">
         <p class="eyebrow">GitHub Resources</p>
         <h2>ps-ai 场景演示</h2>
-        <p class="section-subtitle">先选本地文件夹让页面自动检索目标视频；GitHub 文件页只做备用入口。</p>
+        <p class="section-subtitle">选择文件夹自动找视频，也可以直接拖入播放；GitHub 页面只作备用入口。</p>
       </div>
 
       <article class="evidence-card">
         <span class="evidence-meta">MP4 / 209 MB</span>
         <h3>ps-ai 场景演示</h3>
-        <p>仓库视频原件，展示 PS-AI 场景流程。你可以直接让页面从本地文件夹里检索并载入这个视频。</p>
-        <p class="local-doc-path">目标文件：ps-ai-scene-demo.mp4 / 本地检索后直接播放 / 备用 GitHub 页面：assets/local-docs/ps-ai-scene-demo.mp4</p>
-        <div class="preview-frame" id="player">
-          <div class="local-video-stage" id="dropzone">
-            <div class="local-video-placeholder" id="empty-state">
-              <h4>本地视频预览</h4>
-              <p>浏览器不能自动扫你的整台电脑，但你点一次后可以选本地文件夹，页面会自动检索目标 mp4 并嵌入播放。</p>
-              <ul>
-                <li>场景流程展示</li>
-                <li>本地文件夹检索后内嵌播放</li>
-                <li>GitHub 页面仅作备用入口</li>
-              </ul>
-              <div class="evidence-actions">
-                <button class="button primary" id="pick-local-folder" type="button">选择本地文件夹</button>
-                <button class="button secondary" id="pick-local-video" type="button">选择本地视频</button>
-                <a class="button secondary" href="https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/ps-ai-scene-demo.mp4" target="_blank" rel="noreferrer">打开 GitHub 视频页</a>
-              </div>
-              <p class="local-doc-note">也可以把 mp4 直接拖到这个区域。</p>
+        <p>展示 PS-AI 场景流程。选择本地文件夹后会按文件名别名检索，也可以把视频直接拖到播放区。</p>
+        <p class="local-doc-path">本地匹配：ps-ai-scene-demo.mp4 / ps-ai场景演示.mp4</p>
+        <div class="local-video-stage" id="dropzone">
+          <div class="local-video-placeholder" id="empty-state">
+            <h4>拖入视频，或选择本地文件夹</h4>
+            <p>文件夹检索会同时匹配仓库英文名和你电脑里的中文文件名。</p>
+            <div class="evidence-actions">
+              <button class="button primary" id="pick-local-folder" type="button">选择本地文件夹</button>
+              <button class="button secondary" id="pick-local-video" type="button">选择本地视频</button>
+              <a class="button secondary" href="https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/ps-ai-scene-demo.mp4" target="_blank" rel="noreferrer">打开 GitHub 视频页</a>
             </div>
-            <div class="local-video-viewer" id="viewer" hidden>
-              <video class="local-video-player" id="local-video" controls playsinline></video>
-              <p class="local-video-name" id="file-name"></p>
-              <div class="evidence-actions">
-                <button class="button primary" id="change-local-folder" type="button">重新选择本地文件夹</button>
-                <button class="button secondary" id="change-local-video" type="button">重新选择本地视频</button>
-                <a class="button secondary" href="https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/ps-ai-scene-demo.mp4" target="_blank" rel="noreferrer">打开 GitHub 视频页</a>
-              </div>
+          </div>
+          <div class="local-video-viewer" id="viewer" hidden>
+            <video class="local-video-player" id="local-video" controls playsinline></video>
+            <p class="local-video-name" id="file-name"></p>
+            <div class="evidence-actions">
+              <button class="button primary" id="change-local-folder" type="button">重新检索文件夹</button>
+              <button class="button secondary" id="change-local-video" type="button">换一个本地视频</button>
+              <a class="button secondary" href="https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/ps-ai-scene-demo.mp4" target="_blank" rel="noreferrer">打开 GitHub 视频页</a>
             </div>
           </div>
         </div>
-        <p class="local-doc-note">如果你想直接看本机文件，点“选择本地文件夹”即可；GitHub 只是备选。</p>
-        <div class="evidence-actions">
-          <button class="button primary" id="open-local" type="button">选择本地文件夹</button>
-          <button class="button secondary" id="copy-local" type="button">复制 GitHub 入口</button>
-          <a class="button secondary" href="../../index.html#local-docs">返回主站入口</a>
-        </div>
+        <a class="local-doc-note" href="../../index.html#local-docs">返回资源入口</a>
       </article>
     </main>
 
     <script>
-      const openLocal = document.getElementById("open-local");
-      const copyLocal = document.getElementById("copy-local");
       const pickLocalFolder = document.getElementById("pick-local-folder");
       const pickLocalVideo = document.getElementById("pick-local-video");
       const changeLocalFolder = document.getElementById("change-local-folder");
@@ -179,31 +128,17 @@
       const viewer = document.getElementById("viewer");
       const localVideo = document.getElementById("local-video");
       const fileName = document.getElementById("file-name");
-      const targetFileName = "ps-ai-scene-demo.mp4";
-      const previewUrl = "https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/ps-ai-scene-demo.mp4";
+      const targetFileNames = ["ps-ai-scene-demo.mp4", "ps-ai场景演示.mp4", "ps-ai场景演示"];
       let currentVideoUrl = "";
 
       localVideoInput.type = "file";
-      localVideoInput.accept = "video/*";
+      localVideoInput.accept = ".mp4,video/*";
       localVideoInput.hidden = true;
       document.body.appendChild(localVideoInput);
 
-      async function copyText(text) {
-        try {
-          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(text);
-            return true;
-          }
-        } catch (error) {
-          // fall through to prompt
-        }
-
-        window.prompt("复制下面这段预览链接：", text);
-        return false;
-      }
-
       function loadLocalFile(file) {
-        if (!file || !file.type.startsWith("video/")) {
+        const isVideo = file && (file.type.startsWith("video/") || /\.(mp4|webm|mov|m4v|avi)$/i.test(file.name));
+        if (!isVideo) {
           window.alert("请选择一个视频文件。");
           return;
         }
@@ -220,13 +155,27 @@
         localVideo.play().catch(() => {});
       }
 
-      async function findFileInDirectory(directoryHandle, fileNameTarget) {
+      function normalizeFileName(name) {
+        return name
+          .toLowerCase()
+          .replace(/\.[^.]+$/, "")
+          .replace(/[\s_()\-\[\]{}（）【】]+/g, "");
+      }
+
+      const normalizedTargetNames = targetFileNames.map(normalizeFileName);
+
+      function matchesTargetFile(name) {
+        const normalizedName = normalizeFileName(name);
+        return normalizedTargetNames.some((target) => normalizedName === target || normalizedName.includes(target) || target.includes(normalizedName));
+      }
+
+      async function findFileInDirectory(directoryHandle) {
         for await (const [name, handle] of directoryHandle.entries()) {
-          if (handle.kind === "file" && name.toLowerCase() === fileNameTarget.toLowerCase()) {
+          if (handle.kind === "file" && matchesTargetFile(name)) {
             return handle.getFile();
           }
           if (handle.kind === "directory") {
-            const nestedFile = await findFileInDirectory(handle, fileNameTarget);
+            const nestedFile = await findFileInDirectory(handle);
             if (nestedFile) {
               return nestedFile;
             }
@@ -243,11 +192,11 @@
 
         try {
           const directoryHandle = await window.showDirectoryPicker({ mode: "read" });
-          const foundFile = await findFileInDirectory(directoryHandle, targetFileName);
+          const foundFile = await findFileInDirectory(directoryHandle);
           if (foundFile) {
             loadLocalFile(foundFile);
           } else {
-            window.alert(`这个文件夹里没有找到 ${targetFileName}`);
+            window.alert("没有找到对应视频。可以直接拖入 mp4，或点“选择本地视频”手动载入。");
           }
         } catch (error) {
           if (error && error.name !== "AbortError") {
@@ -261,7 +210,6 @@
         localVideoInput.click();
       }
 
-      openLocal.addEventListener("click", openFolderPicker);
       pickLocalFolder.addEventListener("click", openFolderPicker);
       pickLocalVideo.addEventListener("click", openPicker);
       changeLocalFolder.addEventListener("click", openFolderPicker);
@@ -292,13 +240,6 @@
         }
       });
 
-      copyLocal.addEventListener("click", async () => {
-        await copyText(previewUrl);
-        copyLocal.textContent = "已复制";
-        setTimeout(() => {
-          copyLocal.textContent = "复制 GitHub 入口";
-        }, 1200);
-      });
     </script>
   </body>
 </html>
