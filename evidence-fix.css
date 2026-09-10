@@ -377,6 +377,46 @@
   }
 }
 
+/* Interview-first section order:
+   show the three selected project lines and their proof before the
+   longer internship history and supporting capability index. */
+html body > main#main {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+html body > main#main > #top {
+  order: 1;
+}
+
+html body > main#main > .metrics {
+  order: 2;
+}
+
+html body > main#main > #positioning {
+  order: 3;
+}
+
+html body > main#main > #projects {
+  order: 4;
+}
+
+html body > main#main > #evidence {
+  order: 5;
+}
+
+html body > main#main > #experience {
+  order: 6;
+}
+
+html body > main#main > #skills {
+  order: 7;
+}
+
+html body > main#main > #local-docs {
+  order: 8;
+}
+
 /* JBT mobile fallback:
    the source proof is a very tall composite image, so never let its natural
    height determine the phone layout or leave the reveal card visually blank. */

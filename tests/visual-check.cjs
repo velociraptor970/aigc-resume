@@ -46,6 +46,22 @@ async function checkViewport(page, width, height, screenshotName) {
     throw new Error(`Horizontal overflow: ${pageWidth.scrollWidth} > ${pageWidth.clientWidth}`);
   }
 
+  const sectionTops = await page.evaluate(() => {
+    const ids = ["positioning", "projects", "evidence", "experience", "skills", "local-docs"];
+    return ids.map((id) => {
+      const element = document.getElementById(id);
+      const rect = element.getBoundingClientRect();
+      return { id, top: rect.top + window.scrollY };
+    });
+  });
+  for (let index = 1; index < sectionTops.length; index += 1) {
+    if (sectionTops[index].top <= sectionTops[index - 1].top) {
+      throw new Error(
+        `Interview-first section order is wrong: ${sectionTops.map(({ id, top }) => `${id}=${top}`).join(", ")}`
+      );
+    }
+  }
+
   if (width >= 1120) {
     const capabilityColumns = await page.$eval(".capability-grid", (element) =>
       getComputedStyle(element).gridTemplateColumns.split(/\s+/).filter(Boolean).length
