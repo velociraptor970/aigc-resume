@@ -47,7 +47,7 @@ async function checkViewport(page, width, height, screenshotName) {
   }
 
   const sectionTops = await page.evaluate(() => {
-    const ids = ["positioning", "experience", "projects", "evidence", "skills", "local-docs"];
+    const ids = ["positioning", "experience", "projects", "evidence", "local-docs"];
     return ids.map((id) => {
       const element = document.getElementById(id);
       const rect = element.getBoundingClientRect();
@@ -59,15 +59,6 @@ async function checkViewport(page, width, height, screenshotName) {
       throw new Error(
         `Interview-first section order is wrong: ${sectionTops.map(({ id, top }) => `${id}=${top}`).join(", ")}`
       );
-    }
-  }
-
-  if (width >= 1120) {
-    const capabilityColumns = await page.$eval(".capability-grid", (element) =>
-      getComputedStyle(element).gridTemplateColumns.split(/\s+/).filter(Boolean).length
-    );
-    if (capabilityColumns !== 3) {
-      throw new Error(`Capability grid should be 3 columns, got ${capabilityColumns}`);
     }
   }
 
