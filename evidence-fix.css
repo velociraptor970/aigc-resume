@@ -376,3 +376,174 @@
     max-height: none !important;
   }
 }
+
+/* JBT mobile fallback:
+   the source proof is a very tall composite image, so never let its natural
+   height determine the phone layout or leave the reveal card visually blank. */
+@media (max-width: 820px) {
+  html body #evidence-jbt.evidence-card,
+  html body #evidence-jbt.reveal {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 16px !important;
+    overflow: hidden !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  html body #evidence-jbt > * {
+    min-width: 0 !important;
+  }
+
+  html body #evidence-jbt > .evidence-meta,
+  html body #evidence-jbt > h3,
+  html body #evidence-jbt > p,
+  html body #evidence-jbt > .pipeline-data-strip,
+  html body #evidence-jbt > .evidence-media-grid,
+  html body #evidence-jbt > .experience-links {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  html body #evidence-jbt > .pipeline-data-strip {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
+  }
+
+  html body #evidence-jbt > .evidence-media-grid.jbt-preview-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-rows: auto !important;
+    gap: 12px !important;
+    height: auto !important;
+    margin-top: 16px !important;
+    position: static !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-shot {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-shot img {
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-top img {
+    object-position: top center !important;
+  }
+
+  html body #evidence-jbt .jbt-preview-bottom img {
+    object-position: bottom center !important;
+  }
+
+  html body #evidence-jbt > .experience-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 14px !important;
+  }
+}
+
+/* Soft-matting mobile layout:
+   override the desktop collage/video grid and the late square-video rule.
+   Each proof item must occupy its own full-width row on a phone. */
+@media (max-width: 820px) {
+  html body #evidence-matting.main-case-card {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 16px !important;
+    overflow: visible !important;
+  }
+
+  html body #evidence-matting > .evidence-points {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    grid-auto-rows: auto !important;
+    align-items: start !important;
+    align-content: start !important;
+    gap: 12px !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 16px !important;
+    position: static !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot {
+    grid-row: auto !important;
+    align-self: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(1),
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(2),
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot:nth-child(3) {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot.evidence-image-tall {
+    aspect-ratio: auto !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-shot.evidence-image-tall img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 520px !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-video-shot {
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  html body #evidence-matting > .evidence-media-grid > .evidence-video-shot video {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    background: #111 !important;
+  }
+}

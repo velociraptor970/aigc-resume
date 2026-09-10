@@ -3,7 +3,9 @@ const { pathToFileURL } = require("node:url");
 const { chromium } = require("playwright");
 
 const root = path.resolve(__dirname, "..");
-const pageUrl = pathToFileURL(path.join(root, "index.html")).href;
+const pageUrl = process.env.TEST_BASE_URL
+  ? new URL("index.html", process.env.TEST_BASE_URL.endsWith("/") ? process.env.TEST_BASE_URL : `${process.env.TEST_BASE_URL}/`).href
+  : pathToFileURL(path.join(root, "index.html")).href;
 
 async function checkViewport(page, width, height, screenshotName) {
   const errors = [];
@@ -25,7 +27,7 @@ async function checkViewport(page, width, height, screenshotName) {
     visible: Boolean(element.offsetWidth || element.offsetHeight || element.getClientRects().length),
     text: element.textContent.replace(/\s+/g, ""),
   }));
-  if (!heroTitle.visible || heroTitle.text !== "把美术需求做成可复用AI工作流") {
+  if (!heroTitle.visible || heroTitle.text !== "把AI接进游戏美术生产流程") {
     throw new Error(`Hero title is not visible or unexpected: ${heroTitle.text}`);
   }
 
