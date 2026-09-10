@@ -378,8 +378,8 @@
 }
 
 /* Interview-first section order:
-   show the three selected project lines and their proof before the
-   longer internship history and supporting capability index. */
+   keep the hero and internship track up front, then use the project
+   index as a bridge into the actual portfolio evidence. */
 html body > main#main {
   display: flex !important;
   flex-direction: column !important;
@@ -397,15 +397,15 @@ html body > main#main > #positioning {
   order: 3;
 }
 
-html body > main#main > #projects {
+html body > main#main > #experience {
   order: 4;
 }
 
-html body > main#main > #evidence {
+html body > main#main > #projects {
   order: 5;
 }
 
-html body > main#main > #experience {
+html body > main#main > #evidence {
   order: 6;
 }
 

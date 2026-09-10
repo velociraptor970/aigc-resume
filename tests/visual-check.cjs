@@ -47,7 +47,7 @@ async function checkViewport(page, width, height, screenshotName) {
   }
 
   const sectionTops = await page.evaluate(() => {
-    const ids = ["positioning", "projects", "evidence", "experience", "skills", "local-docs"];
+    const ids = ["positioning", "experience", "projects", "evidence", "skills", "local-docs"];
     return ids.map((id) => {
       const element = document.getElementById(id);
       const rect = element.getBoundingClientRect();
