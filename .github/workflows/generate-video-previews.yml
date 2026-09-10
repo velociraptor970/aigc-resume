@@ -2,10 +2,6 @@ name: Generate lightweight video previews
 
 on:
   push:
-    paths:
-      - "assets/local-docs/ps-ai-scene-demo.mp4"
-      - "assets/local-docs/pa-ai-detail-demo.mp4"
-      - ".github/workflows/generate-video-previews.yml"
   workflow_dispatch:
 
 permissions:
