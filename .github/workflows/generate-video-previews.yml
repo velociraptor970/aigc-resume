@@ -17,8 +17,16 @@ jobs:
         with:
           lfs: true
 
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Generate real posters and short previews
         run: |
+          set -euxo pipefail
+          test -s assets/local-docs/ps-ai-scene-demo.mp4
+          test -s assets/local-docs/pa-ai-detail-demo.mp4
           ffmpeg -y -ss 8 -i assets/local-docs/ps-ai-scene-demo.mp4 -frames:v 1 -vf "scale=960:-2" -q:v 3 assets/local-docs/ps-ai-scene-preview.jpg
           ffmpeg -y -ss 8 -i assets/local-docs/pa-ai-detail-demo.mp4 -frames:v 1 -vf "scale=960:-2" -q:v 3 assets/local-docs/pa-ai-detail-preview.jpg
           ffmpeg -y -ss 0 -i assets/local-docs/ps-ai-scene-demo.mp4 -t 12 -vf "scale=960:-2,fps=30" -an -c:v libx264 -preset veryfast -crf 28 -pix_fmt yuv420p -movflags +faststart assets/local-docs/ps-ai-scene-preview.mp4
