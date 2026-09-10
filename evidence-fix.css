@@ -409,12 +409,8 @@ html body > main#main > #evidence {
   order: 6;
 }
 
-html body > main#main > #skills {
-  order: 7;
-}
-
 html body > main#main > #local-docs {
-  order: 8;
+  order: 7;
 }
 
 /* JBT mobile fallback:
