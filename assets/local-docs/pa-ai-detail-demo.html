@@ -11,6 +11,9 @@
         margin: 0;
         background: #f6f4fb;
       }
+      [hidden] {
+        display: none !important;
+      }
       .local-doc-shell {
         width: min(1040px, calc(100% - 32px));
         margin: 0 auto;
@@ -25,6 +28,38 @@
         border-radius: 8px;
         background: rgba(17, 199, 201, 0.045);
         align-content: start;
+      }
+      .public-preview {
+        display: grid;
+        gap: 12px;
+        margin: 22px 0 24px;
+        padding: 16px;
+        border: 1px solid rgba(17, 17, 17, 0.14);
+        border-radius: 8px;
+        background: rgba(17, 199, 201, 0.045);
+      }
+      .public-preview-heading {
+        display: grid;
+        gap: 6px;
+      }
+      .public-preview-heading h4 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.2;
+      }
+      .public-preview-player {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 6px;
+        background: #111;
+        object-fit: contain;
+      }
+      .public-preview-caption {
+        margin: 0;
+        color: rgba(17, 17, 17, 0.68);
+        font-size: 13px;
+        line-height: 1.5;
       }
       .local-video-stage.is-dragover {
         background: rgba(17, 199, 201, 0.1);
@@ -85,14 +120,24 @@
       <div class="section-heading">
         <p class="eyebrow">GitHub Resources</p>
         <h2>PA-AI 立绘设计细化</h2>
-        <p class="section-subtitle">选择文件夹自动找视频，也可以直接拖入播放；GitHub 页面只作备用入口。</p>
+        <p class="section-subtitle">页面先展示真实视频片段；完整原片仍可从本地文件夹检索或直接拖入播放。</p>
       </div>
 
       <article class="evidence-card">
         <span class="evidence-meta">MP4 / 208 MB</span>
         <h3>PA-AI 立绘设计细化（1.25 倍数）</h3>
-        <p>展示立绘设计细化流程。选择本地文件夹后会按文件名别名检索，也可以把视频直接拖到播放区。</p>
+        <p>展示立绘设计细化流程。下方先看原片截取的真实片段，完整视频可从本地文件夹检索或拖入播放区。</p>
         <p class="local-doc-path">本地匹配：pa-ai-detail-demo.mp4 / PA-AI立绘设计细化（1.25倍数）.mp4</p>
+        <div class="public-preview">
+          <div class="public-preview-heading">
+            <span class="evidence-meta">在线预览 / 12 秒</span>
+            <h4>先看真实视频片段</h4>
+          </div>
+          <video class="public-preview-player" controls preload="metadata" playsinline poster="pa-ai-detail-preview.jpg">
+            <source src="pa-ai-detail-preview.mp4" type="video/mp4">
+          </video>
+          <p class="public-preview-caption">封面取自原片第 8 秒；这里展示轻量预览，完整原片只通过本地加载，不引导下载大文件。</p>
+        </div>
         <div class="local-video-stage" id="dropzone">
           <div class="local-video-placeholder" id="empty-state">
             <h4>拖入视频，或选择本地文件夹</h4>
@@ -100,7 +145,6 @@
             <div class="evidence-actions">
               <button class="button primary" id="pick-local-folder" type="button">选择本地文件夹</button>
               <button class="button secondary" id="pick-local-video" type="button">选择本地视频</button>
-              <a class="button secondary" href="https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/pa-ai-detail-demo.mp4" target="_blank" rel="noreferrer">打开 GitHub 视频页</a>
             </div>
           </div>
           <div class="local-video-viewer" id="viewer" hidden>
@@ -109,7 +153,6 @@
             <div class="evidence-actions">
               <button class="button primary" id="change-local-folder" type="button">重新检索文件夹</button>
               <button class="button secondary" id="change-local-video" type="button">换一个本地视频</button>
-              <a class="button secondary" href="https://github.com/velociraptor970/aigc-resume/blob/main/assets/local-docs/pa-ai-detail-demo.mp4" target="_blank" rel="noreferrer">打开 GitHub 视频页</a>
             </div>
           </div>
         </div>
